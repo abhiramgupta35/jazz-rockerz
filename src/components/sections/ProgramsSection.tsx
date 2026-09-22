@@ -25,7 +25,7 @@ export const ProgramsSection: React.FC = () => {
   }, [selectedProgram]);
 
   const handleLearnMore = (program: typeof PROGRAMS[0]) => {
-    trackEvent("program_view_modal", { program: program.slug });
+    trackEvent("program_view", { program: program.slug });
     setSelectedProgram(program);
   };
 

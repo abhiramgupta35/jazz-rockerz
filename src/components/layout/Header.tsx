@@ -55,7 +55,7 @@ export const Header: React.FC = () => {
         <div className="relative group">
           <div className="absolute -inset-1 bg-gradient-to-r from-[#E91E73] to-[#9b59b6] rounded-[2rem] blur opacity-50 group-hover:opacity-80 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
           <button 
-            onClick={openModal}
+            onClick={() => openModal()}
             className="relative bg-[#E91E73] text-white px-8 py-3 rounded-[2rem] font-bold text-sm tracking-wide hover:bg-pink-600 transition-colors shadow-lg"
           >
             BOOK FREE TRIAL
