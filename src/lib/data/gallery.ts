@@ -1,0 +1,68 @@
+import { GalleryItem } from "../types";
+
+export const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: "g-1",
+    src: "/images/dance-stage.webp",
+    alt: "Synchronized stage dance performance with dramatic lighting",
+    category: "dance",
+    title: "Dance Performances",
+    caption: "Students performing synchronized leaps in the Annual Showcase spotlight",
+  },
+  {
+    id: "g-2",
+    src: "/images/music-girl.webp",
+    alt: "Young girl laughing and singing with festive bokeh lighting",
+    category: "music",
+    title: "Music & Vocal Classes",
+    caption: "Joyful melodic expression and stage confidence in our music academy",
+  },
+  {
+    id: "g-3",
+    src: "/images/gymnastics-boy.webp",
+    alt: "Young acrobat doing powerful breakdance and tumbling stance",
+    category: "gymnastics",
+    title: "Gymnastics Activities",
+    caption: "Floor acrobatics, balance drills, and athletic flexibility training",
+  },
+  {
+    id: "g-4",
+    src: "/images/dance-girls.webp",
+    alt: "Little girls performing energetic pom-pom routine on stage",
+    category: "dance",
+    title: "Stage Performances",
+    caption: "Vibrant choreography and teamwork at regional Dubai dance arena",
+  },
+  {
+    id: "g-5",
+    src: "/images/theatre-kids.webp",
+    alt: "Children in costume performing theatre and musical acting on stage",
+    category: "theatre",
+    title: "Fine Arts & Theatre Activities",
+    caption: "Storytelling, acting, and musical theatre masterclasses",
+  },
+  {
+    id: "g-6",
+    src: "/images/achievements-stage.webp",
+    alt: "Ensemble group of students celebrating with hands raised on stage",
+    category: "events",
+    title: "Group Performances & Mega Events",
+    caption: "Triumphant finale celebration at the JazzRockers World Record event",
+  },
+  {
+    id: "g-7",
+    src: "/images/hero-accent.webp",
+    alt: "Energetic boy showing rock gesture in full celebration",
+    category: "dance",
+    title: "Youth Energy & Spirit",
+    caption: "Discovering inner passion, rhythm, and self-belief every single day",
+  },
+  {
+    id: "g-8",
+    src: "/images/hiphop-crew.webp",
+    alt: "Three girls in black street hip hop dance gear posing with attitude",
+    category: "dance",
+    title: "Hip Hop Crew Showcase",
+    caption: "Street dance battles, grooves, and junior crew choreography",
+  },
+];
