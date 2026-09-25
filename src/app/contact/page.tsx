@@ -29,14 +29,14 @@ export default function ContactPage() {
               {/* Phone Card */}
               <a
                 href="tel:+97143445990"
-                className="bg-white rounded-2xl p-5 border border-gray-100 shadow-card hover:border-brand-pink transition-colors flex items-center gap-4"
+                className="bg-white rounded-2xl p-5 border border-gray-100 shadow-card hover:border-brand-primary transition-colors flex items-center gap-4"
               >
-                <div className="w-12 h-12 rounded-xl bg-pink-50 text-brand-pink flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-primary-50 text-brand-primary flex items-center justify-center shrink-0">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
                   <span className="text-xs text-gray-500 font-semibold block">Telephone</span>
-                  <strong className="text-base font-extrabold text-brand-purple">04 344 5990</strong>
+                  <strong className="text-base font-extrabold text-brand-secondary">04 344 5990</strong>
                 </div>
               </a>
 
@@ -59,33 +59,33 @@ export default function ContactPage() {
               {/* Email Card */}
               <a
                 href="mailto:info@jazzrockers.ae"
-                className="bg-white rounded-2xl p-5 border border-gray-100 shadow-card hover:border-brand-pink transition-colors flex items-center gap-4"
+                className="bg-white rounded-2xl p-5 border border-gray-100 shadow-card hover:border-brand-primary transition-colors flex items-center gap-4"
               >
-                <div className="w-12 h-12 rounded-xl bg-pink-50 text-brand-pink flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-primary-50 text-brand-primary flex items-center justify-center shrink-0">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
                   <span className="text-xs text-gray-500 font-semibold block">Email</span>
-                  <strong className="text-sm font-extrabold text-brand-purple">info@jazzrockers.ae</strong>
+                  <strong className="text-sm font-extrabold text-brand-secondary">info@jazzrockers.ae</strong>
                 </div>
               </a>
 
               {/* Hours Card */}
               <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-card flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-purple-50 text-brand-purple flex items-center justify-center shrink-0">
-                  <Clock className="w-6 h-6 text-brand-pink" />
+                <div className="w-12 h-12 rounded-xl bg-purple-50 text-brand-secondary flex items-center justify-center shrink-0">
+                  <Clock className="w-6 h-6 text-brand-primary" />
                 </div>
                 <div>
                   <span className="text-xs text-gray-500 font-semibold block">Opening Hours</span>
-                  <strong className="text-xs sm:text-sm font-extrabold text-brand-purple">Mon - Sat: 8 AM - 9 PM</strong>
+                  <strong className="text-xs sm:text-sm font-extrabold text-brand-secondary">Mon - Sat: 8 AM - 9 PM</strong>
                 </div>
               </div>
             </div>
 
             {/* Dubai Branches Listing */}
             <div className="bg-gray-50/70 rounded-3xl p-6 sm:p-8 border border-gray-200/80">
-              <h3 className="text-xl font-extrabold text-brand-purple mb-4 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-brand-pink" />
+              <h3 className="text-xl font-extrabold text-brand-secondary mb-4 flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-brand-primary" />
                 <span>Our Dubai Branch Locations</span>
               </h3>
               <div className="space-y-3">
@@ -95,7 +95,7 @@ export default function ContactPage() {
                     className="p-3.5 rounded-xl bg-white border border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2"
                   >
                     <div>
-                      <h4 className="font-extrabold text-sm text-brand-purple">
+                      <h4 className="font-extrabold text-sm text-brand-secondary">
                         {b.name}
                       </h4>
                       <p className="text-xs text-gray-500">
@@ -104,7 +104,7 @@ export default function ContactPage() {
                     </div>
                     <a
                       href={`tel:${b.phone.replace(/\s+/g, "")}`}
-                      className="text-xs font-bold text-brand-pink hover:underline shrink-0"
+                      className="text-xs font-bold text-brand-primary hover:underline shrink-0"
                     >
                       {b.phone}
                     </a>

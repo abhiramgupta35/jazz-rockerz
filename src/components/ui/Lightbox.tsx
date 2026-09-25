@@ -59,7 +59,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
         <button
           onClick={onClose}
           aria-label="Close Lightbox"
-          className="absolute top-4 right-4 z-50 w-11 h-11 rounded-full bg-white/10 hover:bg-brand-pink text-white flex items-center justify-center backdrop-blur-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-pink"
+          className="absolute top-4 right-4 z-50 w-11 h-11 rounded-full bg-white/10 hover:bg-brand-primary text-white flex items-center justify-center backdrop-blur-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-primary"
         >
           <X className="w-6 h-6" />
         </button>
@@ -68,7 +68,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
         <button
           onClick={onPrev}
           aria-label="Previous Image"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 hover:bg-brand-pink text-white flex items-center justify-center backdrop-blur-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-pink"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 hover:bg-brand-primary text-white flex items-center justify-center backdrop-blur-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-primary"
         >
           <ChevronLeft className="w-7 h-7" />
         </button>
@@ -77,7 +77,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
         <button
           onClick={onNext}
           aria-label="Next Image"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 hover:bg-brand-pink text-white flex items-center justify-center backdrop-blur-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-pink"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 hover:bg-brand-primary text-white flex items-center justify-center backdrop-blur-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-primary"
         >
           <ChevronRight className="w-7 h-7" />
         </button>
@@ -110,7 +110,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
             <p className="text-sm text-gray-300 mt-1">
               {currentItem.caption}
             </p>
-            <div className="mt-2 text-xs font-semibold uppercase tracking-wider text-brand-pink">
+            <div className="mt-2 text-xs font-semibold uppercase tracking-wider text-brand-primary">
               {currentIndex + 1} / {items.length}
             </div>
           </div>

@@ -59,12 +59,12 @@ export const Testimonials: React.FC = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col items-center text-center mb-10"
         >
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-pink-50 text-[#E91E73] text-[13px] font-bold tracking-wide mb-5">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary-50 text-[#E31E24] text-[13px] font-bold tracking-wide mb-5">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
             Verified Parent Reviews
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-black uppercase mb-3 text-[#1f2937] tracking-tight">
-            WHAT <span className="text-[#E91E73]">PARENTS & STUDENTS</span> SAY
+            WHAT <span className="text-[#E31E24]">PARENTS & STUDENTS</span> SAY
           </h2>
           <p className="text-gray-500 text-[17px] font-medium">
             Real stories. Real progress. Real confidence.
@@ -120,7 +120,7 @@ export const Testimonials: React.FC = () => {
             <div className="font-bold text-gray-900 text-[15px] pt-1">
               1000+ Happy Families
             </div>
-            <button className="w-full bg-[#E91E73] text-white py-3.5 rounded-[10px] font-bold text-[13px] tracking-wide flex items-center justify-center gap-1 hover:bg-pink-600 transition-colors mt-2">
+            <button className="w-full bg-[#E31E24] text-white py-3.5 rounded-[10px] font-bold text-[13px] tracking-wide flex items-center justify-center gap-1 hover:bg-red- transition-colors mt-2">
               READ REVIEWS <ChevronRight className="w-[18px] h-[18px]" strokeWidth={3} />
             </button>
           </motion.div>
@@ -134,7 +134,7 @@ export const Testimonials: React.FC = () => {
           transition={{ delay: 0.8, duration: 0.5 }}
           className="flex items-center justify-center gap-2 mt-8"
         >
-          <div className="w-2.5 h-2.5 rounded-full bg-[#E91E73]"></div>
+          <div className="w-2.5 h-2.5 rounded-full bg-[#E31E24]"></div>
           <div className="w-2.5 h-2.5 rounded-full bg-gray-200"></div>
           <div className="w-2.5 h-2.5 rounded-full bg-gray-200"></div>
         </motion.div>

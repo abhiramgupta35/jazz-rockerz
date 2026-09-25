@@ -73,7 +73,7 @@ export const GallerySection: React.FC = () => {
                 />
 
                 {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-purple/90 via-black/20 to-transparent opacity-60 group-hover:opacity-85 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-secondary/90 via-black/20 to-transparent opacity-60 group-hover:opacity-85 transition-opacity duration-300" />
 
                 {/* Hover Maximize Icon */}
                 <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -82,7 +82,7 @@ export const GallerySection: React.FC = () => {
 
                 {/* Bottom Caption Overlay */}
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-pink-300 block mb-1">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-red- block mb-1">
                     {item.title}
                   </span>
                   <p className="text-xs sm:text-sm font-bold text-white line-clamp-2 leading-snug">

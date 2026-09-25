@@ -37,7 +37,7 @@ export const FreeTrialModal: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeModal}
-            className="fixed inset-0 bg-brand-purple/80 backdrop-blur-sm"
+            className="fixed inset-0 bg-brand-secondary/80 backdrop-blur-sm"
           />
 
           {/* Dialog Container */}
@@ -52,7 +52,7 @@ export const FreeTrialModal: React.FC = () => {
             <button
               onClick={closeModal}
               aria-label="Close trial dialog"
-              className="absolute -top-3 -right-3 z-20 w-9 h-9 rounded-full bg-white text-gray-700 hover:text-brand-pink shadow-lg flex items-center justify-center border border-gray-100 transition-transform duration-150 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-brand-pink"
+              className="absolute -top-3 -right-3 z-20 w-9 h-9 rounded-full bg-white text-gray-700 hover:text-brand-primary shadow-lg flex items-center justify-center border border-gray-100 transition-transform duration-150 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-brand-primary"
             >
               <X className="w-5 h-5" />
             </button>
@@ -61,7 +61,7 @@ export const FreeTrialModal: React.FC = () => {
             <FreeTrialForm
               defaultProgram={defaultProgram}
               compact
-              className="shadow-2xl border-2 border-brand-pink/20"
+              className="shadow-2xl border-2 border-brand-primary/20"
             />
           </motion.div>
         </div>

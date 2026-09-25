@@ -38,16 +38,16 @@ export const Footer: React.FC = () => {
               Nurturing talent, building confidence and creating tomorrow's performers since 2012.
             </p>
             <div className="flex items-center gap-3">
-              <a href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E91E73] hover:border-[#E91E73] transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors">
                 <Facebook className="w-[18px] h-[18px] text-white" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E91E73] hover:border-[#E91E73] transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors">
                 <Instagram className="w-[18px] h-[18px] text-white" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E91E73] hover:border-[#E91E73] transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors">
                 <Youtube className="w-[18px] h-[18px] text-white" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E91E73] hover:border-[#E91E73] transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors">
                 {/* TikTok SVG */}
                 <svg className="w-[18px] h-[18px] text-white fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 15.68a6.34 6.34 0 0 0 6.27 6.36 6.34 6.34 0 0 0 6.25-6.36V8.05a8.36 8.36 0 0 0 4.39 1.44V6.15a5.22 5.22 0 0 1-2.32-.46z"/></svg>
               </a>
@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
                     href={link.href}
                     className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"
                   >
-                    <span className="text-[#E91E73] text-[18px] leading-none font-bold">›</span>
+                    <span className="text-[#E31E24] text-[18px] leading-none font-bold">›</span>
                     <span>{link.name}</span>
                   </Link>
                 </li>
@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
                 "International City, Dubai",
               ].map((branch) => (
                 <li key={branch} className="flex items-center gap-3">
-                  <MapPin className="w-4 h-4 text-[#E91E73] flex-shrink-0" />
+                  <MapPin className="w-4 h-4 text-[#E31E24] flex-shrink-0" />
                   <span>{branch}</span>
                 </li>
               ))}
@@ -107,7 +107,7 @@ export const Footer: React.FC = () => {
             </h4>
             <div className="space-y-4 text-[15px] text-gray-300">
               <a href="tel:+971800509" className="flex items-center gap-3 hover:text-white transition-colors">
-                <Phone className="w-4 h-4 text-[#E91E73] fill-[#E91E73] shrink-0" />
+                <Phone className="w-4 h-4 text-[#E31E24] fill-[#E31E24] shrink-0" />
                 <span>+971 800509</span>
               </a>
               <a href="https://wa.me/971800509" className="flex items-center gap-3 hover:text-white transition-colors">
@@ -115,12 +115,12 @@ export const Footer: React.FC = () => {
                 <span>+971 800509</span>
               </a>
               <a href="mailto:contact@jazzrockers.com" className="flex items-center gap-3 hover:text-white transition-colors pb-5 border-b border-gray-800">
-                <Mail className="w-4 h-4 text-[#E91E73] shrink-0" />
+                <Mail className="w-4 h-4 text-[#E31E24] shrink-0" />
                 <span>contact@jazzrockers.com</span>
               </a>
 
               <div className="flex gap-3 pt-3">
-                <Clock className="w-[18px] h-[18px] text-[#E91E73] shrink-0 mt-0.5" />
+                <Clock className="w-[18px] h-[18px] text-[#E31E24] shrink-0 mt-0.5" />
                 <div>
                   <div className="font-bold text-white mb-2 text-[14px]">Opening Hours</div>
                   <div className="text-[13.5px]">Mon - Fri : 8:45 AM - 8:45 PM</div>

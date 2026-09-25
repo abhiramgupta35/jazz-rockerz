@@ -57,7 +57,7 @@ export const ProgramsSection: React.FC = () => {
               className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between"
             >
               {/* Image Container with Zoom on Hover */}
-              <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-brand-purple">
+              <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-brand-secondary">
                 <Image
                   src={prog.heroImage}
                   alt={`${prog.name} classes at JazzRockers`}
@@ -71,7 +71,7 @@ export const ProgramsSection: React.FC = () => {
 
                 {/* Tag / Category Badge */}
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-white/95 text-brand-purple shadow-md">
+                  <span className="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-white/95 text-brand-secondary shadow-md">
                     {prog.name}
                   </span>
                 </div>
@@ -94,7 +94,7 @@ export const ProgramsSection: React.FC = () => {
                   <ul className="space-y-1.5 text-sm text-gray-700">
                     {prog.subPrograms.map((sub) => (
                       <li key={sub} className="flex items-center gap-2">
-                        <div className="w-4 h-4 rounded-full bg-pink-50 text-brand-pink flex items-center justify-center shrink-0">
+                        <div className="w-4 h-4 rounded-full bg-primary-50 text-brand-primary flex items-center justify-center shrink-0">
                           <Check className="w-2.5 h-2.5" />
                         </div>
                         <span className="font-medium text-gray-800">{sub}</span>
@@ -107,7 +107,7 @@ export const ProgramsSection: React.FC = () => {
                 <div className="pt-2">
                   <button
                     onClick={() => handleLearnMore(prog)}
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-pink-50 hover:bg-brand-pink text-brand-pink hover:text-white font-extrabold text-sm transition-all duration-200 group-hover:bg-brand-pink group-hover:text-white group-hover:shadow-pink"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-primary-50 hover:bg-brand-primary text-brand-primary hover:text-white font-extrabold text-sm transition-all duration-200 group-hover:bg-brand-primary group-hover:text-white group-hover:shadow-primary"
                   >
                     <span>LEARN MORE</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -148,7 +148,7 @@ export const ProgramsSection: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight mb-2" style={{ color: selectedProgram.accentColor || '#E91E73' }}>
+                  <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight mb-2" style={{ color: selectedProgram.accentColor || '#E31E24' }}>
                     {selectedProgram.name}
                   </h2>
                   <p className="text-lg sm:text-xl font-medium text-gray-200">
@@ -167,13 +167,13 @@ export const ProgramsSection: React.FC = () => {
                   {/* Highlights/Features */}
                   <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
                     <div className="flex items-center gap-3 mb-4">
-                      <Star className="w-6 h-6 text-[#E91E73]" />
+                      <Star className="w-6 h-6 text-[#E31E24]" />
                       <h4 className="text-lg font-bold text-gray-900">Program Highlights</h4>
                     </div>
                     <ul className="space-y-3">
                       {selectedProgram.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <Check className="w-5 h-5 text-[#E91E73] shrink-0 mt-0.5" />
+                          <Check className="w-5 h-5 text-[#E31E24] shrink-0 mt-0.5" />
                           <span className="text-gray-700">{feature}</span>
                         </li>
                       ))}
@@ -183,13 +183,13 @@ export const ProgramsSection: React.FC = () => {
                   {/* Benefits */}
                   <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
                     <div className="flex items-center gap-3 mb-4">
-                      <Target className="w-6 h-6 text-[#E91E73]" />
+                      <Target className="w-6 h-6 text-[#E31E24]" />
                       <h4 className="text-lg font-bold text-gray-900">Key Benefits</h4>
                     </div>
                     <ul className="space-y-3">
                       {selectedProgram.benefits.map((benefit, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <Check className="w-5 h-5 text-[#E91E73] shrink-0 mt-0.5" />
+                          <Check className="w-5 h-5 text-[#E31E24] shrink-0 mt-0.5" />
                           <span className="text-gray-700">{benefit}</span>
                         </li>
                       ))}
@@ -201,12 +201,12 @@ export const ProgramsSection: React.FC = () => {
                   {/* Age Groups */}
                   <div>
                     <div className="flex items-center gap-3 mb-4">
-                      <Users className="w-6 h-6 text-[#E91E73]" />
+                      <Users className="w-6 h-6 text-[#E31E24]" />
                       <h4 className="text-lg font-bold text-gray-900">Age Groups</h4>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {selectedProgram.ageGroups.map((age, i) => (
-                        <span key={i} className="px-4 py-2 bg-pink-50 text-[#E91E73] rounded-full text-sm font-semibold border border-pink-100">
+                        <span key={i} className="px-4 py-2 bg-primary-50 text-[#E31E24] rounded-full text-sm font-semibold border border-red-">
                           {age}
                         </span>
                       ))}
@@ -216,7 +216,7 @@ export const ProgramsSection: React.FC = () => {
                   {/* Schedule */}
                   <div>
                     <div className="flex items-center gap-3 mb-4">
-                      <Calendar className="w-6 h-6 text-[#E91E73]" />
+                      <Calendar className="w-6 h-6 text-[#E31E24]" />
                       <h4 className="text-lg font-bold text-gray-900">Schedule</h4>
                     </div>
                     <p className="text-gray-700 font-medium">
@@ -233,7 +233,7 @@ export const ProgramsSection: React.FC = () => {
                   </div>
                   <button
                     onClick={handleBookTrial}
-                    className="w-full sm:w-auto bg-[#E91E73] hover:bg-pink-600 text-white px-8 py-4 rounded-full font-bold tracking-wide transition-all duration-300 shadow-lg shadow-pink-200 transform hover:-translate-y-1"
+                    className="w-full sm:w-auto bg-[#E31E24] hover:bg-red- text-white px-8 py-4 rounded-full font-bold tracking-wide transition-all duration-300 shadow-lg shadow-primary-200 transform hover:-translate-y-1"
                   >
                     BOOK A FREE TRIAL
                   </button>

@@ -27,20 +27,20 @@ export const Button: React.FC<ButtonProps> = ({
   const sizeStyles = {
     sm: "text-xs px-4 py-2 gap-1.5",
     md: "text-sm md:text-base px-6 py-3 gap-2",
-    lg: "text-base md:text-lg px-8 py-3.5 gap-2.5 shadow-pink",
+    lg: "text-base md:text-lg px-8 py-3.5 gap-2.5 shadow-primary",
   };
 
   const variantStyles = {
     primary:
-      "bg-brand-pink text-white hover:bg-brand-pink-hover shadow-md shadow-brand-pink/25 focus-visible:ring-brand-pink",
+      "bg-brand-primary text-white hover:bg-brand-primary-hover shadow-md shadow-brand-primary/25 focus-visible:ring-brand-primary",
     secondary:
-      "bg-brand-purple text-white hover:bg-brand-purple-light shadow-md shadow-brand-purple/20 focus-visible:ring-brand-purple",
+      "bg-brand-secondary text-white hover:bg-brand-secondary-light shadow-md shadow-brand-secondary/20 focus-visible:ring-brand-secondary",
     outline:
-      "bg-transparent text-brand-pink border-2 border-brand-pink hover:bg-brand-pink hover:text-white focus-visible:ring-brand-pink",
+      "bg-transparent text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white focus-visible:ring-brand-primary",
     white:
-      "bg-white text-brand-pink hover:bg-pink-50 shadow-md shadow-black/10 focus-visible:ring-white",
+      "bg-white text-brand-primary hover:bg-primary-50 shadow-md shadow-black/10 focus-visible:ring-white",
     ghost:
-      "bg-transparent text-gray-700 hover:text-brand-pink hover:bg-pink-50/50 focus-visible:ring-brand-pink",
+      "bg-transparent text-gray-700 hover:text-brand-primary hover:bg-primary-50/50 focus-visible:ring-brand-primary",
   };
 
   return (

@@ -63,19 +63,19 @@ export const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ program })
           />
         </div>
 
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-pink/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-primary/20 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-pink-300 text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-brand-pink" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-red- text-xs font-bold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-brand-primary" />
                 <span>JazzRockers Academy Program</span>
               </div>
 
               <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-none">
                 {program.name}{" "}
-                <span className="text-brand-pink block mt-2 text-2xl sm:text-4xl font-extrabold normal-case">
+                <span className="text-brand-primary block mt-2 text-2xl sm:text-4xl font-extrabold normal-case">
                   {program.tagline}
                 </span>
               </h1>
@@ -109,21 +109,21 @@ export const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ program })
               </h3>
               <ul className="space-y-3 text-sm text-gray-200">
                 <li className="flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-brand-pink shrink-0 mt-0.5" />
+                  <Clock className="w-5 h-5 text-brand-primary shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white block">Schedule:</strong>
                     {program.schedule}
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Users className="w-5 h-5 text-brand-pink shrink-0 mt-0.5" />
+                  <Users className="w-5 h-5 text-brand-primary shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white block">Age Divisions:</strong>
                     {program.ageGroups.join(" · ")}
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Award className="w-5 h-5 text-brand-pink shrink-0 mt-0.5" />
+                  <Award className="w-5 h-5 text-brand-primary shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white block">Certification:</strong>
                     International examinations &amp; annual stage performances
@@ -151,10 +151,10 @@ export const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ program })
                 key={sub}
                 className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-xl bg-pink-50 text-brand-pink flex items-center justify-center font-black mb-3">
+                <div className="w-10 h-10 rounded-xl bg-primary-50 text-brand-primary flex items-center justify-center font-black mb-3">
                   0{idx + 1}
                 </div>
-                <h3 className="text-lg font-extrabold text-brand-purple mb-2">
+                <h3 className="text-lg font-extrabold text-brand-secondary mb-2">
                   {sub}
                 </h3>
                 <p className="text-sm text-gray-600">
@@ -180,7 +180,7 @@ export const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ program })
               <ul className="mt-8 space-y-4">
                 {program.benefits.map((b) => (
                   <li key={b} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-brand-pink shrink-0 mt-1" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-primary shrink-0 mt-1" />
                     <span className="text-base font-semibold text-gray-800">
                       {b}
                     </span>
@@ -190,16 +190,16 @@ export const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ program })
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-2xl font-extrabold text-brand-purple">
+              <h3 className="text-2xl font-extrabold text-brand-secondary">
                 Key Studio Features
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {program.features.map((feat) => (
                   <div
                     key={feat}
-                    className="p-5 rounded-2xl bg-pink-50/50 border border-pink-100 flex items-start gap-3"
+                    className="p-5 rounded-2xl bg-primary-50/50 border border-red- flex items-start gap-3"
                   >
-                    <ShieldCheck className="w-5 h-5 text-brand-pink shrink-0 mt-0.5" />
+                    <ShieldCheck className="w-5 h-5 text-brand-primary shrink-0 mt-0.5" />
                     <span className="text-xs sm:text-sm font-bold text-gray-800">
                       {feat}
                     </span>
@@ -231,12 +231,12 @@ export const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ program })
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="w-full text-left p-5 flex items-center justify-between font-bold text-brand-purple hover:text-brand-pink transition-colors"
+                    className="w-full text-left p-5 flex items-center justify-between font-bold text-brand-secondary hover:text-brand-primary transition-colors"
                   >
                     <span className="text-sm sm:text-base">{faq.q}</span>
                     <ChevronDown
                       className={`w-5 h-5 shrink-0 transition-transform ${
-                        isOpen ? "rotate-180 text-brand-pink" : "text-gray-400"
+                        isOpen ? "rotate-180 text-brand-primary" : "text-gray-400"
                       }`}
                     />
                   </button>
@@ -253,19 +253,19 @@ export const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ program })
       </section>
 
       {/* 5. Free Trial CTA Banner */}
-      <section className="py-20 bg-brand-purple text-white relative overflow-hidden">
+      <section className="py-20 bg-brand-secondary text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-5">
               <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">
                 Book Your {program.name} <br />
-                <span className="text-brand-pink">FREE Trial Class</span>
+                <span className="text-brand-primary">FREE Trial Class</span>
               </h2>
               <p className="text-base text-gray-300 max-w-lg">
                 Limited slots available this week across our 5 Dubai studios. Book now to reserve your child&apos;s spot.
               </p>
-              <div className="flex items-center gap-3 text-sm text-pink-200">
-                <CheckCircle2 className="w-5 h-5 text-brand-pink shrink-0" />
+              <div className="flex items-center gap-3 text-sm text-red-">
+                <CheckCircle2 className="w-5 h-5 text-brand-primary shrink-0" />
                 <span>No commitment · Experienced coaches · World-class equipment</span>
               </div>
             </div>

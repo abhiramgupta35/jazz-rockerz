@@ -32,10 +32,10 @@ export const StickyMobileCTA: React.FC = () => {
         <a
           href="tel:+97143445990"
           onClick={() => trackEvent("phone_click", { location: "sticky_bottom_bar" })}
-          className="flex-1 flex items-center justify-center gap-1.5 py-3 px-2 rounded-2xl bg-gray-100 hover:bg-gray-200 text-brand-purple font-extrabold text-xs transition-colors shadow-sm active:scale-95"
+          className="flex-1 flex items-center justify-center gap-1.5 py-3 px-2 rounded-2xl bg-gray-100 hover:bg-gray-200 text-brand-secondary font-extrabold text-xs transition-colors shadow-sm active:scale-95"
           aria-label="Call JazzRockers"
         >
-          <Phone className="w-4 h-4 text-brand-pink shrink-0" />
+          <Phone className="w-4 h-4 text-brand-primary shrink-0" />
           <span>CALL</span>
         </a>
 
@@ -58,7 +58,7 @@ export const StickyMobileCTA: React.FC = () => {
             trackEvent("free_trial_cta_click", { location: "sticky_bottom_bar" });
             openModal();
           }}
-          className="flex-[1.8] flex items-center justify-center gap-1.5 py-3 px-3 rounded-2xl bg-brand-pink hover:bg-brand-pink-hover text-white font-extrabold text-xs transition-all shadow-md shadow-brand-pink/30 active:scale-95"
+          className="flex-[1.8] flex items-center justify-center gap-1.5 py-3 px-3 rounded-2xl bg-brand-primary hover:bg-brand-primary-hover text-white font-extrabold text-xs transition-all shadow-md shadow-brand-primary/30 active:scale-95"
           aria-label="Book Free Trial Class"
         >
           <Sparkles className="w-3.5 h-3.5 shrink-0 animate-pulse" />

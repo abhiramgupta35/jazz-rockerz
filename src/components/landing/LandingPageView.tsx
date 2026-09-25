@@ -57,9 +57,9 @@ export const LandingPageView: React.FC<LandingPageViewProps> = ({
             <a
               href="tel:+97143445990"
               onClick={() => trackEvent("phone_click", { location: "landing_nav" })}
-              className="flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-brand-purple hover:text-brand-pink transition-colors"
+              className="flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-brand-secondary hover:text-brand-primary transition-colors"
             >
-              <Phone className="w-4 h-4 text-brand-pink" />
+              <Phone className="w-4 h-4 text-brand-primary" />
               <span className="hidden sm:inline">Call Us: 04 344 5990</span>
               <span className="sm:hidden">04 344 5990</span>
             </a>
@@ -99,14 +99,14 @@ export const LandingPageView: React.FC<LandingPageViewProps> = ({
           />
         </div>
 
-        <div className="absolute top-0 right-10 w-96 h-96 bg-brand-pink/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-10 w-96 h-96 bg-brand-primary/20 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Column (7 cols) */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-pink-300 text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-brand-pink" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-red- text-xs font-bold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-brand-primary" />
                 <span>Special 2026 Admissions Open</span>
               </div>
 
@@ -114,7 +114,7 @@ export const LandingPageView: React.FC<LandingPageViewProps> = ({
                 {title.includes(highlightWord) ? (
                   <>
                     {title.split(highlightWord)[0]}
-                    <span className="text-brand-pink underline decoration-pink-400 decoration-wavy decoration-2 underline-offset-8">
+                    <span className="text-brand-primary underline decoration-red- decoration-wavy decoration-2 underline-offset-8">
                       {highlightWord}
                     </span>
                     {title.split(highlightWord)[1]}
@@ -124,7 +124,7 @@ export const LandingPageView: React.FC<LandingPageViewProps> = ({
                 )}
               </h1>
 
-              <p className="text-base sm:text-xl text-pink-100 font-medium leading-relaxed max-w-xl">
+              <p className="text-base sm:text-xl text-red- font-medium leading-relaxed max-w-xl">
                 {subheadline}
               </p>
 
@@ -135,7 +135,7 @@ export const LandingPageView: React.FC<LandingPageViewProps> = ({
                     key={b}
                     className="flex items-center gap-2.5 bg-white/5 backdrop-blur-sm rounded-xl px-3.5 py-2 border border-white/10 text-xs sm:text-sm font-semibold text-gray-100"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-brand-pink shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-brand-primary shrink-0" />
                     <span>{b}</span>
                   </div>
                 ))}
@@ -150,7 +150,7 @@ export const LandingPageView: React.FC<LandingPageViewProps> = ({
                   <span className="text-white ml-1">4.9 / 5.0 Google Rating</span>
                 </div>
                 <span>•</span>
-                <span className="text-pink-200">1000+ Students Trained</span>
+                <span className="text-red-">1000+ Students Trained</span>
               </div>
             </div>
 
@@ -182,17 +182,17 @@ export const LandingPageView: React.FC<LandingPageViewProps> = ({
                 className="bg-white rounded-2xl p-6 border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-pink-50 text-brand-pink flex items-center justify-center font-bold mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-primary-50 text-brand-primary flex items-center justify-center font-bold mb-4">
                     0{idx + 1}
                   </div>
-                  <h3 className="text-base font-extrabold text-brand-purple mb-2">
+                  <h3 className="text-base font-extrabold text-brand-secondary mb-2">
                     {feat}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                     Designed to inspire technique, confidence, physical health, and teamwork in a joyful setting.
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-gray-100 text-[11px] font-bold text-brand-pink uppercase tracking-wider">
+                <div className="mt-4 pt-3 border-t border-gray-100 text-[11px] font-bold text-brand-primary uppercase tracking-wider">
                   Verified Curriculum
                 </div>
               </div>
@@ -227,12 +227,12 @@ export const LandingPageView: React.FC<LandingPageViewProps> = ({
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="w-full text-left p-5 flex items-center justify-between font-bold text-brand-purple hover:text-brand-pink transition-colors"
+                    className="w-full text-left p-5 flex items-center justify-between font-bold text-brand-secondary hover:text-brand-primary transition-colors"
                   >
                     <span className="text-sm sm:text-base">{faq.q}</span>
                     <ChevronDown
                       className={`w-5 h-5 shrink-0 transition-transform ${
-                        isOpen ? "rotate-180 text-brand-pink" : "text-gray-400"
+                        isOpen ? "rotate-180 text-brand-primary" : "text-gray-400"
                       }`}
                     />
                   </button>
@@ -249,19 +249,19 @@ export const LandingPageView: React.FC<LandingPageViewProps> = ({
       </section>
 
       {/* 7. Final Conversion Section */}
-      <section className="py-20 bg-brand-purple text-white relative">
+      <section className="py-20 bg-brand-secondary text-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-4">
               <h2 className="text-3xl sm:text-5xl font-black uppercase text-white">
                 Start Your Child&apos;s Journey <br />
-                <span className="text-brand-pink">Book a Free Trial Today</span>
+                <span className="text-brand-primary">Book a Free Trial Today</span>
               </h2>
               <p className="text-base text-gray-300 max-w-lg leading-relaxed">
                 Join 1,000+ satisfied families across Dubai. Zero risk, 100% free experience at any of our 5 premier branches.
               </p>
-              <div className="flex items-center gap-3 text-xs sm:text-sm text-pink-200">
-                <ShieldCheck className="w-5 h-5 text-brand-pink shrink-0" />
+              <div className="flex items-center gap-3 text-xs sm:text-sm text-red-">
+                <ShieldCheck className="w-5 h-5 text-brand-primary shrink-0" />
                 <span>No registration fee · Experienced certified coaches · Safe studios</span>
               </div>
             </div>
@@ -277,12 +277,12 @@ export const LandingPageView: React.FC<LandingPageViewProps> = ({
       </section>
 
       {/* Minimal Footer */}
-      <footer className="py-8 bg-brand-purple text-gray-400 text-xs border-t border-white/10 text-center">
+      <footer className="py-8 bg-brand-secondary text-gray-400 text-xs border-t border-white/10 text-center">
         <div className="max-w-7xl mx-auto px-4 space-y-2">
           <p>© {new Date().getFullYear()} JazzRockers Academy UAE. All rights reserved.</p>
           <p>Dubai Branches: Al Nahda · Karama · Mirdif · JLT · International City</p>
           <div className="flex items-center justify-center gap-4 text-gray-300 pt-2">
-            <a href="tel:+97143445990" className="hover:text-brand-pink transition-colors">
+            <a href="tel:+97143445990" className="hover:text-brand-primary transition-colors">
               Tel: 04 344 5990
             </a>
             <span>•</span>

@@ -3,7 +3,7 @@ import { GalleryItem } from "../types";
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "g-1",
-    src: "/images/dance-stage.webp",
+    src: "/images/converted_webp/DSC02515-2.webp",
     alt: "Synchronized stage dance performance with dramatic lighting",
     category: "dance",
     title: "Dance Performances",
@@ -11,7 +11,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "g-2",
-    src: "/images/music-girl.webp",
+    src: "/images/converted_webp/IMG_0208.webp",
     alt: "Young girl laughing and singing with festive bokeh lighting",
     category: "music",
     title: "Music & Vocal Classes",
@@ -27,7 +27,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "g-4",
-    src: "/images/dance-girls.webp",
+    src: "/images/converted_webp/IMG_1572.webp",
     alt: "Little girls performing energetic pom-pom routine on stage",
     category: "dance",
     title: "Stage Performances",
@@ -43,7 +43,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "g-6",
-    src: "/images/achievements-stage.webp",
+    src: "/images/converted_webp/DSC02313.webp",
     alt: "Ensemble group of students celebrating with hands raised on stage",
     category: "events",
     title: "Group Performances & Mega Events",

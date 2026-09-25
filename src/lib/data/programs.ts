@@ -30,7 +30,7 @@ export const PROGRAMS: ProgramItem[] = [
       "Healthy posture, flexibility, and creative expression",
     ],
     schedule: "Weekdays & Weekends (Morning, Afternoon & Evening Batches)",
-    accentColor: "#E91E73",
+    accentColor: "#E31E24",
   },
   {
     id: "music",

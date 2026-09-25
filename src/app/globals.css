@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    --brand-pink: #E91E73;
-    --brand-pink-hover: #D81B60;
-    --brand-purple: #17002F;
-    --brand-purple-deep: #100021;
+    --brand-primary: #E31E24;
+    --brand-primary-hover: #C91A1F;
+    --brand-secondary: #2B3582;
+    --brand-secondary-deep: #1F265E;
     --brand-dark: #171717;
   }
 
@@ -24,7 +24,7 @@
   }
 
   ::selection {
-    background-color: #E91E73;
+    background-color: #E31E24;
     color: #FFFFFF;
   }
 }

@@ -19,24 +19,23 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <Link
       href="/"
-      className={`group inline-flex items-center gap-2 select-none focus:outline-none ${className}`}
+      className={`group inline-flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 select-none focus:outline-none ${className}`}
       aria-label="JazzRockers Academy Home"
     >
-      <div className="relative flex items-center justify-center w-12 h-12 shrink-0">
-        <svg viewBox="0 0 100 100" className="w-full h-full text-[#E91E73]">
-           <polygon points="50,5 61,39 97,39 68,59 79,93 50,72 21,93 32,59 3,39 39,39" fill="none" stroke="currentColor" strokeWidth="4"/>
-           <path d="M50 20 Q 55 35 65 40 Q 55 50 55 70 Q 45 50 45 40 Q 35 35 50 20 Z" fill={iconFill}/>
+      <div className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 shrink-0 bg-brand-primary rounded-xl p-2">
+        {/* Placeholder for the Kangaroo logo */}
+        <svg viewBox="0 0 100 100" className="w-full h-full text-white">
+           <path d="M50 20 Q 55 35 65 40 Q 55 50 55 70 Q 45 50 45 40 Q 35 35 50 20 Z" fill="currentColor"/>
         </svg>
       </div>
 
-      <div className="flex flex-col leading-none">
-        <div className={`flex items-baseline tracking-tighter font-extrabold text-3xl ${textColor}`}>
-          <span className={`font-light ${isLight ? "text-[#E91E73]" : ""}`}>JAZZ</span>
-          <span>ROCKERS</span>
+      <div className="flex flex-col leading-none items-center sm:items-start justify-center pt-1">
+        <div className={`tracking-tight font-bold text-2xl sm:text-3xl text-brand-secondary`}>
+          jazzrockers
         </div>
         {showTagline && (
-          <span className={`text-[10px] font-medium tracking-wide ${isLight ? "text-gray-300" : "text-gray-600"} mt-1`}>
-            Dance · Music · Gymnastics · Fine Arts
+          <span className={`text-[8px] sm:text-[9px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-brand-primary mt-1.5 uppercase`}>
+            Dance | Music | Finearts | Fitness
           </span>
         )}
       </div>

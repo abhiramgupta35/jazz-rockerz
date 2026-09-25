@@ -13,7 +13,7 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({ className = "" }) 
   return (
     <div className={`bg-white rounded-[1.5rem] overflow-hidden shadow-2xl ${className}`}>
       {/* Pink Header */}
-      <div className="bg-[#E91E73] px-6 py-8 text-center text-white">
+      <div className="bg-[#E31E24] px-6 py-8 text-center text-white">
         <h3 className="text-[1.75rem] font-bold mb-1">Book a FREE Trial Class</h3>
         <p className="text-[15px] font-medium tracking-wide">Limited Seats – Enroll Today!</p>
       </div>
@@ -25,7 +25,7 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({ className = "" }) 
           <input
             type="text"
             placeholder="Parent Name"
-            className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] focus:outline-none focus:border-[#E91E73] text-gray-700 font-medium placeholder-gray-500"
+            className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] focus:outline-none focus:border-[#E31E24] text-gray-700 font-medium placeholder-gray-500"
           />
           <User className="absolute right-4 top-1/2 -translate-y-1/2 w-[22px] h-[22px] text-gray-800" />
         </div>
@@ -35,7 +35,7 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({ className = "" }) 
           <input
             type="tel"
             placeholder="Phone Number"
-            className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] focus:outline-none focus:border-[#E91E73] text-gray-700 font-medium placeholder-gray-500"
+            className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] focus:outline-none focus:border-[#E31E24] text-gray-700 font-medium placeholder-gray-500"
           />
           <Phone className="absolute right-4 top-1/2 -translate-y-1/2 w-[22px] h-[22px] text-gray-800" />
         </div>
@@ -45,7 +45,7 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({ className = "" }) 
           <input
             type="text"
             placeholder="Child's Age"
-            className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] focus:outline-none focus:border-[#E91E73] text-gray-700 font-medium placeholder-gray-500"
+            className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] focus:outline-none focus:border-[#E31E24] text-gray-700 font-medium placeholder-gray-500"
           />
           <Calendar className="absolute right-4 top-1/2 -translate-y-1/2 w-[22px] h-[22px] text-gray-800" />
         </div>
@@ -54,7 +54,7 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({ className = "" }) 
         <div className="relative">
           <select
             defaultValue=""
-            className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] appearance-none bg-white focus:outline-none focus:border-[#E91E73] text-gray-500 font-medium"
+            className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] appearance-none bg-white focus:outline-none focus:border-[#E31E24] text-gray-500 font-medium"
           >
             <option value="" disabled>Interested In</option>
             <option value="dance">Dance</option>
@@ -67,7 +67,7 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({ className = "" }) 
         <div className="relative">
           <select
             defaultValue=""
-            className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] appearance-none bg-white focus:outline-none focus:border-[#E91E73] text-gray-500 font-medium"
+            className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] appearance-none bg-white focus:outline-none focus:border-[#E31E24] text-gray-500 font-medium"
           >
             <option value="" disabled>Preferred Branch</option>
             <option value="branch1">Branch 1</option>
@@ -78,7 +78,7 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({ className = "" }) 
 
         {/* Button */}
         <div className="pt-2">
-          <button className="w-full bg-[#E91E73] text-white py-[1.125rem] rounded-xl font-bold text-[15px] tracking-wide hover:bg-pink-600 transition-colors">
+          <button className="w-full bg-[#E31E24] text-white py-[1.125rem] rounded-xl font-bold text-[15px] tracking-wide hover:bg-red- transition-colors">
             BOOK FREE TRIAL
           </button>
         </div>

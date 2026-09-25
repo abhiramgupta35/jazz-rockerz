@@ -15,13 +15,13 @@ import { SectionHeading } from "../ui/SectionHeading";
 export const WhyChooseUs: React.FC = () => {
   const cards = [
     {
-      icon: <GraduationCap className="w-6 h-6 text-brand-pink" />,
+      icon: <GraduationCap className="w-6 h-6 text-brand-primary" />,
       title: "Expert Coaches",
       desc: "Trained & certified instructors",
       badge: "Certified",
     },
     {
-      icon: <Sparkles className="w-6 h-6 text-purple-600" />,
+      icon: <Sparkles className="w-6 h-6 text-blue-" />,
       title: "Holistic Development",
       desc: "Builds confidence, discipline & creativity",
       badge: "Core Values",
@@ -75,7 +75,7 @@ export const WhyChooseUs: React.FC = () => {
   return (
     <section className="py-20 bg-gray-50/70 relative overflow-hidden">
       {/* Decorative subtle ambient circle */}
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-pink-100/40 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-red-/40 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
@@ -102,12 +102,12 @@ export const WhyChooseUs: React.FC = () => {
               className="bg-white rounded-2xl p-6 sm:p-5 border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                <div className="w-12 h-12 rounded-xl bg-pink-50 flex items-center justify-center mb-4 group-hover:bg-brand-pink group-hover:text-white transition-colors duration-200">
+                <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-4 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-200">
                   <span className="group-hover:text-white transition-colors">
                     {card.icon}
                   </span>
                 </div>
-                <h3 className="text-base font-extrabold text-brand-purple tracking-tight mb-1.5 leading-snug">
+                <h3 className="text-base font-extrabold text-brand-secondary tracking-tight mb-1.5 leading-snug">
                   {card.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
@@ -116,10 +116,10 @@ export const WhyChooseUs: React.FC = () => {
               </div>
 
               <div className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-pink">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-primary">
                   {card.badge}
                 </span>
-                <span className="text-xs text-gray-300 group-hover:text-brand-pink transition-colors">
+                <span className="text-xs text-gray-300 group-hover:text-brand-primary transition-colors">
                   ★
                 </span>
               </div>

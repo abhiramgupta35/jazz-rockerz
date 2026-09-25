@@ -62,7 +62,7 @@ export const Hero: React.FC = () => {
             <motion.h1 variants={itemVariants} className="text-5xl md:text-[5.5rem] font-extrabold text-white tracking-tight leading-[1]">
               DISCOVER <br />
               YOUR CHILD&apos;S <br />
-              <span className="text-[#E91E73]">HIDDEN TALENT</span>
+              <span className="text-[#E31E24]">HIDDEN TALENT</span>
             </motion.h1>
 
             <motion.p variants={itemVariants} className="text-xl md:text-[1.35rem] text-white font-medium max-w-[500px] leading-tight pb-2">
@@ -72,7 +72,7 @@ export const Hero: React.FC = () => {
             <motion.ul variants={itemVariants} className="space-y-3 pt-2 text-white text-[15px] font-bold tracking-wide">
               {benefits.map((benefit, idx) => (
                 <li key={idx} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#E91E73] flex items-center justify-center">
+                  <div className="w-5 h-5 rounded-full bg-[#E31E24] flex items-center justify-center">
                     <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
                     </svg>

@@ -32,7 +32,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     return (
       <>
         {parts[0]}
-        <span className="text-brand-pink underline decoration-pink-300 decoration-wavy decoration-2 underline-offset-8">
+        <span className="text-brand-primary underline decoration-red- decoration-wavy decoration-2 underline-offset-8">
           {highlightWord}
         </span>
         {parts[1]}
@@ -49,15 +49,15 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       className={`max-w-3xl ${centered ? "mx-auto text-center" : ""} ${className}`}
     >
       {badge && (
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-pink-100/80 text-brand-pink mb-3 border border-pink-200/60 shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-pink animate-ping" />
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-red-/80 text-brand-primary mb-3 border border-red-/60 shadow-sm">
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-primary animate-ping" />
           {badge}
         </span>
       )}
 
       <h2
         className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight uppercase ${
-          light ? "text-white" : "text-brand-purple"
+          light ? "text-white" : "text-brand-secondary"
         }`}
       >
         {renderTitle()}

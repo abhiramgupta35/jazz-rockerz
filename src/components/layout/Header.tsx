@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
           <Link
             key={item.name}
             href={item.href}
-            className="flex items-center gap-1 text-[15px] font-bold text-black hover:text-[#E91E73] transition-colors"
+            className="flex items-center gap-1 text-[15px] font-bold text-black hover:text-[#E31E24] transition-colors"
           >
             {item.name}
           </Link>
@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
 
       <div className="hidden lg:flex items-center gap-6 pr-4">
         <div className="flex items-center gap-2">
-          <Phone className="w-5 h-5 text-[#E91E73]" fill="currentColor" />
+          <Phone className="w-5 h-5 text-[#E31E24]" fill="currentColor" />
           <div className="flex flex-col text-left leading-tight">
             <span className="text-[11px] text-gray-500 font-semibold">Call Us</span>
             <span className="text-[15px] font-extrabold text-black">+971 800509</span>
@@ -53,10 +53,10 @@ export const Header: React.FC = () => {
         </a>
 
         <div className="relative group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-[#E91E73] to-[#9b59b6] rounded-[2rem] blur opacity-50 group-hover:opacity-80 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+          <div className="absolute -inset-1 bg-gradient-to-r from-[#E31E24] to-[#9b59b6] rounded-[2rem] blur opacity-50 group-hover:opacity-80 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
           <button 
             onClick={() => openModal()}
-            className="relative bg-[#E91E73] text-white px-8 py-3 rounded-[2rem] font-bold text-sm tracking-wide hover:bg-pink-600 transition-colors shadow-lg"
+            className="relative bg-[#E31E24] text-white px-8 py-3 rounded-[2rem] font-bold text-sm tracking-wide hover:bg-red- transition-colors shadow-lg"
           >
             BOOK FREE TRIAL
           </button>

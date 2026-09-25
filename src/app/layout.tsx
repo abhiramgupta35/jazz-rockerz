@@ -26,7 +26,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#17002F",
+  themeColor: "#2B3582",
 };
 
 export const metadata: Metadata = {
@@ -79,7 +79,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${outfit.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
-      <body className="font-sans antialiased min-h-screen flex flex-col justify-between bg-white selection:bg-brand-pink selection:text-white" suppressHydrationWarning>
+      <body className="font-sans antialiased min-h-screen flex flex-col justify-between bg-white selection:bg-brand-primary selection:text-white" suppressHydrationWarning>
         <ModalProvider>
           <Header />
           <main className="flex-grow">{children}</main>
