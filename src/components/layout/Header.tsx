@@ -1,13 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 import { Logo } from "../ui/Logo";
 import { useModal } from "@/context/ModalContext";
 
 export const Header: React.FC = () => {
   const { openModal } = useModal();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const navLinks = [
     { name: "Home", href: "/" },
@@ -62,6 +63,48 @@ export const Header: React.FC = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu Toggle Button */}
+      <button 
+        className="lg:hidden p-2 text-black"
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      >
+        {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+      </button>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-full left-0 w-full bg-white shadow-lg rounded-b-[1.5rem] py-4 px-6 flex flex-col gap-4 lg:hidden z-50 border-t border-gray-100">
+          {navLinks.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-[15px] font-bold text-black hover:text-[#E31E24] transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+          <div className="pt-4 border-t border-gray-100 flex flex-col gap-4">
+            <div className="flex items-center gap-2">
+              <Phone className="w-5 h-5 text-[#E31E24]" fill="currentColor" />
+              <div className="flex flex-col text-left leading-tight">
+                <span className="text-[11px] text-gray-500 font-semibold">Call Us</span>
+                <span className="text-[15px] font-extrabold text-black">+971 800509</span>
+              </div>
+            </div>
+            <button 
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                openModal();
+              }}
+              className="w-full bg-[#E31E24] text-white px-8 py-3 rounded-[2rem] font-bold text-sm tracking-wide shadow-lg"
+            >
+              BOOK FREE TRIAL
+            </button>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

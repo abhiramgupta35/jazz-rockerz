@@ -46,6 +46,9 @@ export const metadata: Metadata = {
     "free trial dance class dubai",
   ],
   authors: [{ name: "JazzRockers Academy" }],
+  icons: {
+    icon: "/images/jazz-logo.webp",
+  },
   openGraph: {
     title: "JazzRockers | Dance, Music, Gymnastics & Fine Arts Academy in Dubai",
     description:

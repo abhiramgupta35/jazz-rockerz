@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 
+import Image from "next/image";
+
 interface LogoProps {
   variant?: "dark" | "light";
   className?: string;
@@ -19,22 +21,25 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <Link
       href="/"
-      className={`group inline-flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 select-none focus:outline-none ${className}`}
+      className={`group inline-flex flex-row items-center gap-2 sm:gap-3 select-none focus:outline-none ${className}`}
       aria-label="JazzRockers Academy Home"
     >
-      <div className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 shrink-0 bg-brand-primary rounded-xl p-2">
-        {/* Placeholder for the Kangaroo logo */}
-        <svg viewBox="0 0 100 100" className="w-full h-full text-white">
-           <path d="M50 20 Q 55 35 65 40 Q 55 50 55 70 Q 45 50 45 40 Q 35 35 50 20 Z" fill="currentColor"/>
-        </svg>
+      <div className="relative flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 shrink-0 bg-transparent rounded-xl p-1 overflow-hidden">
+        <Image 
+          src="/images/jazz-logo.webp"
+          alt="JazzRockers Logo"
+          fill
+          className="object-contain"
+          sizes="(max-width: 640px) 40px, 56px"
+        />
       </div>
 
-      <div className="flex flex-col leading-none items-center sm:items-start justify-center pt-1">
-        <div className={`tracking-tight font-bold text-2xl sm:text-3xl text-brand-secondary`}>
+      <div className="flex flex-col leading-none items-start justify-center pt-1">
+        <div className={`tracking-tight font-bold text-xl sm:text-3xl text-brand-secondary`}>
           jazzrockers
         </div>
         {showTagline && (
-          <span className={`text-[8px] sm:text-[9px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-brand-primary mt-1.5 uppercase`}>
+          <span className={`text-[7px] sm:text-[9px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-brand-primary mt-1.5 uppercase`}>
             Dance | Music | Finearts | Fitness
           </span>
         )}
