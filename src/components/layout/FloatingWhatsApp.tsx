@@ -24,7 +24,7 @@ export const FloatingWhatsApp: React.FC = () => {
     <>
       <button
         onClick={handleOpenClick}
-        className="fixed bottom-6 right-6 z-[40] flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.2)] hover:bg-[#20bd5a] transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+        className="fixed bottom-6 right-6 z-[40] hidden md:flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.2)] hover:bg-[#20bd5a] transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
         aria-label="Chat with us on WhatsApp"
       >
         <svg viewBox="0 0 24 24" className="w-7 h-7 fill-white" xmlns="http://www.w3.org/2000/svg">

@@ -84,10 +84,10 @@ export const Hero: React.FC = () => {
 
             <motion.div variants={itemVariants} className="pt-8 flex items-center gap-4">
               <div className="flex -space-x-3">
-                <Image src="/images/i (1).webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-11 h-11" />
-                <Image src="/images/i (2).webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-11 h-11" />
-                <Image src="/images/i (3).webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-11 h-11" />
-                <Image src="/images/i (4).webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-11 h-11" />
+                <Image src="/images/avatar-1.webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-11 h-11" />
+                <Image src="/images/avatar-2.webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-11 h-11" />
+                <Image src="/images/avatar-3.webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-11 h-11" />
+                <Image src="/images/avatar-4.webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-11 h-11" />
               </div>
               <div className="flex flex-col">
                 <span className="text-white font-bold text-sm tracking-wide">1000+ Happy Students</span>

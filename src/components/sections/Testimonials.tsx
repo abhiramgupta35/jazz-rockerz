@@ -11,19 +11,19 @@ export const Testimonials: React.FC = () => {
       quote: "JazzRockers has transformed my daughter. She is more confident and passionate about dance now!",
       name: "Priya Sharma",
       location: "Al Nahda, Dubai",
-      avatar: "/images/i (1).webp"
+      avatar: "/images/avatar-1.webp"
     },
     {
       quote: "The teachers are amazing and the environment is very positive. Highly recommended!",
       name: "Ramesh Nair",
       location: "Karama, Dubai",
-      avatar: "/images/i (2).webp"
+      avatar: "/images/avatar-2.webp"
     },
     {
       quote: "My son loves gymnastics classes here. Great training and excellent facilities.",
       name: "Sneha Iyer",
       location: "Mirdif, Dubai",
-      avatar: "/images/i (3).webp"
+      avatar: "/images/avatar-3.webp"
     }
   ];
 
@@ -48,14 +48,14 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-white overflow-hidden" id="testimonials">
+    <section className="py-10 lg:py-16 bg-white overflow-hidden" id="testimonials">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col items-center text-center mb-10"
         >
@@ -72,16 +72,17 @@ export const Testimonials: React.FC = () => {
         </motion.div>
 
         {/* Cards Grid */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Review Cards */}
           {testimonials.map((review, idx) => (
-            <motion.div variants={cardVariants} key={idx} className="bg-white rounded-[1.25rem] p-6 border border-gray-100 shadow-sm flex flex-col justify-between h-full hover:shadow-md transition-shadow">
+            <motion.div 
+              key={idx} 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 + idx * 0.15, ease: "easeOut" }}
+              className="bg-white rounded-[1.25rem] p-6 border border-gray-100 shadow-sm flex flex-col justify-between h-full hover:shadow-md transition-shadow"
+            >
               <div>
                 <div className="flex items-center gap-1 text-yellow-400 mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -103,10 +104,16 @@ export const Testimonials: React.FC = () => {
           ))}
 
           {/* Google CTA Card */}
-          <motion.div variants={cardVariants} className="bg-white rounded-[1.25rem] p-6 border border-gray-100 shadow-sm flex flex-col items-center text-center justify-center space-y-4 hover:shadow-md transition-shadow">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 + testimonials.length * 0.15, ease: "easeOut" }}
+            className="bg-white rounded-[1.25rem] p-6 border border-gray-100 shadow-sm flex flex-col items-center text-center justify-center space-y-4 hover:shadow-md transition-shadow"
+          >
             <div className="flex items-center gap-4 w-full justify-center">
               <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
-                 <Image src="/images/logo-google.avif" alt="Google" width={48} height={48} className="w-10 h-10 object-contain" />
+                 <Image src="/images/google.png" alt="Google" width={48} height={48} className="w-10 h-10 object-contain" />
               </div>
               <div className="text-left">
                 <div className="font-bold text-gray-900 leading-tight text-[15px]">Rated 4.9 Stars<br/>on Google</div>
@@ -124,7 +131,7 @@ export const Testimonials: React.FC = () => {
               READ REVIEWS <ChevronRight className="w-[18px] h-[18px]" strokeWidth={3} />
             </button>
           </motion.div>
-        </motion.div>
+        </div>
 
         {/* Pagination Dots */}
         <motion.div 
@@ -132,7 +139,7 @@ export const Testimonials: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.8, duration: 0.5 }}
-          className="flex items-center justify-center gap-2 mt-8"
+          className="flex items-center justify-center gap-2 mt-4 sm:mt-8"
         >
           <div className="w-2.5 h-2.5 rounded-full bg-[#E31E24]"></div>
           <div className="w-2.5 h-2.5 rounded-full bg-gray-200"></div>

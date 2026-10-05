@@ -36,7 +36,7 @@ export const GallerySection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 lg:py-24 bg-white relative overflow-hidden" id="gallery">
+    <section className="py-6 lg:py-16 bg-white relative overflow-hidden" id="gallery">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="Moments of Magic"
@@ -46,10 +46,15 @@ export const GallerySection: React.FC = () => {
         />
 
         {/* Gallery Grid Composition */}
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 auto-rows-[220px] sm:auto-rows-[280px] grid-flow-dense">
           {GALLERY_ITEMS.map((item, idx) => {
-            // Give different cards interesting layout heights
-            const isTall = idx === 0 || idx === 5;
+            // Create a perfectly fitting bento box layout
+            let layoutClass = "col-span-1 row-span-1";
+            if (idx === 0 || idx === 5) {
+              layoutClass = "row-span-2"; // Tall cards
+            } else if (idx === 1 || idx === 6) {
+              layoutClass = "sm:col-span-2"; // Wide cards
+            }
 
             return (
               <motion.div
@@ -60,9 +65,7 @@ export const GallerySection: React.FC = () => {
                 transition={{ delay: (idx % 4) * 0.1, duration: 0.45 }}
                 whileHover={{ y: -6 }}
                 onClick={() => openLightbox(idx)}
-                className={`relative group rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover cursor-pointer border border-gray-100 ${
-                  isTall ? "sm:row-span-2 h-72 sm:h-[460px]" : "h-64 sm:h-56"
-                }`}
+                className={`relative group rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover cursor-pointer border border-gray-100 w-full h-full ${layoutClass}`}
               >
                 <Image
                   src={item.src}
