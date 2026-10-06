@@ -102,7 +102,7 @@ export const AdmissionCTA: React.FC = () => {
         </div>
 
         {/* Mobile only image */}
-        <div className="block lg:hidden w-full h-[250px] relative mt-6 mb-2 z-20 pointer-events-none">
+        <div className="block lg:hidden w-full h-[250px] relative mt-6 mb-0 z-20 pointer-events-none">
           <Image
             src="/images/Admission-Open.webp"
             alt="Student Pointing"
@@ -117,7 +117,7 @@ export const AdmissionCTA: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
-          className="w-full lg:w-[40%] flex items-center justify-center lg:justify-end py-10 lg:py-24 z-30"
+          className="w-full lg:w-[40%] flex items-center justify-center lg:justify-end pb-10 pt-0 lg:py-24 z-30"
         >
           <FreeTrialForm className="w-full max-w-[420px] shadow-2xl relative z-30" />
         </motion.div>

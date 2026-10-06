@@ -1,5 +1,6 @@
 import React from "react";
 import { User, Phone, Calendar, ChevronDown, MapPin } from "lucide-react";
+import { BRANCHES } from "@/lib/data/branches";
 
 interface FreeTrialFormProps {
   className?: string;
@@ -70,8 +71,11 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({ className = "" }) 
             className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] appearance-none bg-white focus:outline-none focus:border-[#E31E24] text-gray-500 font-medium"
           >
             <option value="" disabled>Preferred Branch</option>
-            <option value="branch1">Branch 1</option>
-            <option value="branch2">Branch 2</option>
+            {BRANCHES.map((branch) => (
+              <option key={branch.id} value={branch.id}>
+                {branch.name}
+              </option>
+            ))}
           </select>
           <MapPin className="absolute right-4 top-1/2 -translate-y-1/2 w-[22px] h-[22px] text-gray-800" />
         </div>

@@ -8,7 +8,7 @@ export const PROGRAMS: ProgramItem[] = [
     tagline: "Unleash rhythm, grace, and athletic expression",
     description:
       "Our premier dance academy equips young performers with foundational technique, stage presence, and confidence. From classical discipline to high-energy street styles, our world-class certified choreographers nurture every child's artistic potential.",
-    heroImage: "/images/dance-stage.webp",
+    heroImage: "/images/dance.webp",
     subPrograms: [
       "Ballet",
       "Hip Hop",
@@ -70,7 +70,7 @@ export const PROGRAMS: ProgramItem[] = [
     tagline: "Agility, strength, flexibility, and fearlessness",
     description:
       "Taught by certified international coaches in safety-padded professional facilities. Our progressive gymnastics curriculum builds explosive core power, balance, aerial awareness, and Olympic-standard discipline.",
-    heroImage: "/images/gymnastics-boy.webp",
+    heroImage: "/images/gymnastics.jpg",
     subPrograms: [
       "Flexibility Training",
     ],

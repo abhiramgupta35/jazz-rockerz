@@ -10,9 +10,9 @@ export const Hero: React.FC = () => {
     "20+ Professional Programs",
     "Certified & Experienced Coaches",
     "State-of-the-art Studios",
-    "International Performances",
+    "Events and Stage perfomance",
     "Ages 4 Years & Above",
-  ];
+  ]
 
   const containerVariants = {
     hidden: { opacity: 0 },

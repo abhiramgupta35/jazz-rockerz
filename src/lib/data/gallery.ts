@@ -19,7 +19,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "g-3",
-    src: "/images/gymnastics-boy.webp",
+    src: "/images/gymnastics.jpg",
     alt: "Young acrobat doing powerful breakdance and tumbling stance",
     category: "gymnastics",
     title: "Gymnastics Activities",

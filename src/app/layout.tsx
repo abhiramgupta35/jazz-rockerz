@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     siteName: "JazzRockers Academy",
     images: [
       {
-        url: "/images/dance-stage.webp",
+        url: "/images/dance.webp",
         width: 1200,
         height: 630,
         alt: "JazzRockers Performing Arts Academy",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     title: "JazzRockers | Dance, Music, Gymnastics & Fine Arts Academy",
     description:
       "20+ professional programs, certified coaches, and state-of-the-art studios across Dubai. Book a free trial today!",
-    images: ["/images/dance-stage.webp"],
+    images: ["/images/dance.webp"],
   },
 };
 

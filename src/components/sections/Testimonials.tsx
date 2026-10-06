@@ -133,18 +133,7 @@ export const Testimonials: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Pagination Dots */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-          className="flex items-center justify-center gap-2 mt-4 sm:mt-8"
-        >
-          <div className="w-2.5 h-2.5 rounded-full bg-[#E31E24]"></div>
-          <div className="w-2.5 h-2.5 rounded-full bg-gray-200"></div>
-          <div className="w-2.5 h-2.5 rounded-full bg-gray-200"></div>
-        </motion.div>
+
         
       </div>
     </section>
