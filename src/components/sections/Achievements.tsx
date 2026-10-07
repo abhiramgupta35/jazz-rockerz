@@ -26,7 +26,7 @@ export const Achievements: React.FC = () => {
   };
 
   return (
-    <section className="py-20 lg:py-24 bg-white relative">
+    <section className="py-20 lg:py-24 relative">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

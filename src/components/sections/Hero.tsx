@@ -50,8 +50,8 @@ export const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full mt-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full mt-4 sm:mt-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column */}
           <motion.div
             variants={containerVariants}
@@ -82,24 +82,25 @@ export const Hero: React.FC = () => {
               ))}
             </motion.ul>
 
-            <motion.div variants={itemVariants} className="pt-8 flex items-center gap-4">
-              <div className="flex -space-x-3">
-                <Image src="/images/avatar-1.webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-11 h-11" />
-                <Image src="/images/avatar-2.webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-11 h-11" />
-                <Image src="/images/avatar-3.webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-11 h-11" />
-                <Image src="/images/avatar-4.webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-11 h-11" />
+            <motion.div variants={itemVariants} className="pt-4 sm:pt-6 pb-2 sm:pb-0 flex items-center gap-3 sm:gap-4 flex-wrap sm:flex-nowrap">
+              <div className="flex -space-x-2.5 sm:-space-x-3 shrink-0">
+                <Image src="/images/avatar-1.webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-10 h-10 sm:w-11 sm:h-11 shadow-sm" />
+                <Image src="/images/avatar-2.webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-10 h-10 sm:w-11 sm:h-11 shadow-sm" />
+                <Image src="/images/avatar-3.webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-10 h-10 sm:w-11 sm:h-11 shadow-sm" />
+                <Image src="/images/avatar-4.webp" alt="Student" width={44} height={44} className="rounded-full border-2 border-white object-cover w-10 h-10 sm:w-11 sm:h-11 shadow-sm" />
               </div>
-              <div className="flex flex-col">
-                <span className="text-white font-bold text-sm tracking-wide">1000+ Happy Students</span>
-                <div className="flex items-center gap-2 text-gray-300 text-[13px]">
-                  <span>Rated 4.9 Stars on Google</span>
-                  <div className="flex -space-x-0.5">
+              <div className="flex flex-col justify-center min-w-0">
+                <span className="text-white font-bold text-sm tracking-wide leading-tight">1000+ Happy Students</span>
+                <div className="flex items-center gap-1.5 text-gray-200 text-xs sm:text-[13px] mt-1 flex-wrap">
+                  <div className="flex -space-x-0.5 text-yellow-400 shrink-0">
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                      <svg key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24">
                         <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                       </svg>
                     ))}
                   </div>
+                  <span className="font-semibold text-white whitespace-nowrap">4.9/5</span>
+                  <span className="text-gray-300 whitespace-nowrap">on Google</span>
                 </div>
               </div>
             </motion.div>

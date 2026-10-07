@@ -35,7 +35,7 @@ export const ProgramsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 lg:py-24 bg-white relative overflow-hidden" id="programs">
+    <section className="py-20 lg:py-24 relative overflow-hidden" id="programs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="World-Class Curriculum"

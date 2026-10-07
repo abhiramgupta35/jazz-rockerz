@@ -38,7 +38,7 @@ const ClockIcon = () => (
 
 export default function ContactPage() {
   return (
-    <div className="bg-[#FAFAFA] min-h-screen pb-20 pt-36">
+    <div className="min-h-screen pb-20 pt-36 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="mb-14">

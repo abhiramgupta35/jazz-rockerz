@@ -36,7 +36,7 @@ export const GallerySection: React.FC = () => {
   };
 
   return (
-    <section className="py-6 lg:py-16 bg-white relative overflow-hidden" id="gallery">
+    <section className="py-6 lg:py-16 relative overflow-hidden" id="gallery">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="Moments of Magic"

@@ -48,7 +48,7 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="py-10 lg:py-16 bg-white overflow-hidden" id="testimonials">
+    <section className="py-10 lg:py-16 overflow-hidden relative" id="testimonials">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { SiteBackground } from "@/components/layout/SiteBackground";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
@@ -82,14 +83,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${outfit.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
-      <body className="font-sans antialiased min-h-screen flex flex-col justify-between bg-white selection:bg-brand-primary selection:text-white" suppressHydrationWarning>
+      <body className="font-sans antialiased min-h-screen text-brand-dark selection:bg-brand-primary selection:text-white relative bg-[#FBFBFE]" suppressHydrationWarning>
+        <SiteBackground />
         <ModalProvider>
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <StickyMobileCTA />
-          <FloatingWhatsApp />
-          <FreeTrialModal />
+          <div className="relative z-10 flex flex-col min-h-screen justify-between">
+            <Header />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+            <StickyMobileCTA />
+            <FloatingWhatsApp />
+            <FreeTrialModal />
+          </div>
         </ModalProvider>
       </body>
     </html>

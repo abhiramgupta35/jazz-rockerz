@@ -18,7 +18,6 @@
 
   body {
     color: #171717;
-    background-color: #FFFFFF;
     font-family: var(--font-poppins), var(--font-inter), system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
   }
@@ -65,4 +64,128 @@
   0%, 100% { transform: rotate(0deg); }
   25% { transform: rotate(-12deg); }
   75% { transform: rotate(12deg); }
+}
+
+/* Minimal Background Accents Animations */
+@keyframes ribbonDash {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 160;
+  }
+}
+
+@keyframes ribbonFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.8deg);
+  }
+}
+
+@keyframes starletTwinkle {
+  0%, 100% {
+    transform: scale(0.9) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.15) rotate(45deg);
+    opacity: 0.45;
+  }
+}
+
+.animate-ribbon-dash {
+  animation: ribbonDash 24s linear infinite;
+}
+
+.animate-ribbon-float {
+  animation: ribbonFloat 16s ease-in-out infinite;
+}
+
+.animate-starlet {
+  animation: starletTwinkle 6s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Button Jump Animation */
+@keyframes buttonJump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  12% {
+    transform: translateY(-7px) scale(1.03);
+  }
+  24% {
+    transform: translateY(0) scale(0.97);
+  }
+  34% {
+    transform: translateY(-3.5px) scale(1.01);
+  }
+  44% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-jump {
+  animation: buttonJump 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Fun Performing Arts Floating & Twinkle Animations */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(8deg);
+  }
+}
+
+@keyframes floatGentleReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-8deg);
+  }
+}
+
+@keyframes starPulseGlow {
+  0%, 100% {
+    transform: scale(0.9) rotate(0deg);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.22) rotate(30deg);
+    opacity: 1;
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-reverse {
+  animation: floatGentleReverse 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-star-glow {
+  animation: starPulseGlow 3.5s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ribbon-dash,
+  .animate-ribbon-float,
+  .animate-starlet,
+  .animate-jump,
+  .animate-float-gentle,
+  .animate-float-reverse,
+  .animate-star-glow {
+    animation: none !important;
+  }
 }
