@@ -74,7 +74,7 @@ export default function ContactPage() {
 
               {/* WhatsApp */}
               <a
-                href="https://wa.me/971800509"
+                href="https://wa.me/971800509?text=Hello%20JazzRockers!%20I%20would%20like%20to%20enquire%20about%20your%20dance%2C%20music%2C%20gymnastics%2C%20and%20fine%20arts%20classes."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-white rounded-[1.5rem] p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-green-100 transition-all flex items-start gap-4"

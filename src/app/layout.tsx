@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
 import { FreeTrialModal } from "@/components/forms/FreeTrialModal";
+import { WhatsAppConfirmModal } from "@/components/modals/WhatsAppConfirmModal";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { ModalProvider } from "@/context/ModalContext";
 
@@ -93,6 +94,7 @@ export default function RootLayout({
             <StickyMobileCTA />
             <FloatingWhatsApp />
             <FreeTrialModal />
+            <WhatsAppConfirmModal />
           </div>
         </ModalProvider>
       </body>

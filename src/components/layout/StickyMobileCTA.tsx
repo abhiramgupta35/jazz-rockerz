@@ -7,7 +7,7 @@ import { trackEvent } from "@/lib/analytics";
 
 export const StickyMobileCTA: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { openModal } = useModal();
+  const { openModal, openWhatsAppModal } = useModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,12 +55,13 @@ export const StickyMobileCTA: React.FC = () => {
                 </svg>
               </a>
 
-              {/* WHATSAPP — Premium Inset Pod Pill */}
-              <a
-                href="https://wa.me/971501234567"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackEvent("whatsapp_click", { location: "sticky_bottom_bar" })}
+              {/* WHATSAPP — Premium Inset Pod Pill with Confirmation Modal */}
+              <button
+                type="button"
+                onClick={() => {
+                  trackEvent("whatsapp_click", { location: "sticky_bottom_bar" });
+                  openWhatsAppModal();
+                }}
                 className="group flex-1 flex items-center justify-between pl-1 pr-2 py-1 rounded-full bg-gradient-to-r from-emerald-50/90 via-teal-50 to-green-50/80 hover:from-emerald-100 hover:to-teal-100 border border-emerald-200/70 shadow-[0_2px_8px_rgba(16,185,129,0.08)] transition-all duration-200 active:scale-[0.95]"
                 aria-label="WhatsApp JazzRockers"
               >
@@ -74,7 +75,7 @@ export const StickyMobileCTA: React.FC = () => {
                 <svg className="w-2.5 h-2.5 text-emerald-800/40 shrink-0 ml-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </button>
 
               {/* BOOK FREE TRIAL — Premium Pill with Inset Pod & Jump Animation */}
               <button
