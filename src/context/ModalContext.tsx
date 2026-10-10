@@ -24,7 +24,7 @@ interface ModalContextType {
 }
 
 const defaultWhatsAppData: WhatsAppModalOptions = {
-  title: "Chat with JazzRockers on WhatsApp",
+  title: "Chat with Jazzrockers on WhatsApp",
   subtitle: "Connect with our admissions & program advisory team directly on WhatsApp.",
   phone: JAZZROCKERS_WHATSAPP_NUMBER,
   displayPhone: JAZZROCKERS_WHATSAPP_DISPLAY,
@@ -39,15 +39,13 @@ export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [defaultProgram, setDefaultProgram] = useState("Dance");
+  const [defaultProgram, setDefaultProgram] = useState("");
 
   const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
   const [whatsAppData, setWhatsAppData] = useState<WhatsAppModalOptions>(defaultWhatsAppData);
 
   const openModal = (initialProgram?: string) => {
-    if (initialProgram) {
-      setDefaultProgram(initialProgram);
-    }
+    setDefaultProgram(initialProgram || "");
     setIsOpen(true);
   };
 

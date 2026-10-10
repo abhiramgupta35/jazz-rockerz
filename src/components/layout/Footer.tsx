@@ -41,19 +41,16 @@ export const Footer: React.FC = () => {
               Nurturing talent, building confidence and creating tomorrow's performers since 2012.
             </p>
             <div className="flex items-center gap-3">
-              <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors">
+              <a href="https://www.facebook.com/jazzrockers/" aria-label="Facebook" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors">
                 <Facebook className="w-[18px] h-[18px] text-white" />
               </a>
-              <a href="#" aria-label="Instagram" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors">
+              <a href="https://www.instagram.com/jazzrockersuae/" aria-label="Instagram" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors">
                 <Instagram className="w-[18px] h-[18px] text-white" />
               </a>
-              <a href="#" aria-label="YouTube" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors">
+              <a href="https://www.youtube.com/@JazzRockersUAE" aria-label="YouTube" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors">
                 <Youtube className="w-[18px] h-[18px] text-white" />
               </a>
-              <a href="#" aria-label="TikTok" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors">
-                {/* TikTok SVG */}
-                <svg className="w-[18px] h-[18px] text-white fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 15.68a6.34 6.34 0 0 0 6.27 6.36 6.34 6.34 0 0 0 6.25-6.36V8.05a8.36 8.36 0 0 0 4.39 1.44V6.15a5.22 5.22 0 0 1-2.32-.46z"/></svg>
-              </a>
+             
             </div>
           </div>
 
@@ -147,11 +144,11 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between text-[13.5px] text-gray-300 gap-4">
-          <p>© {currentYear} JazzRockers. All Rights Reserved.</p>
+          <p suppressHydrationWarning>© {currentYear} JazzRockers. All Rights Reserved.</p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span className="text-gray-700">|</span>
-            <Link href="#" className="hover:text-white transition-colors">Terms & Conditions</Link>
+            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
             <span className="text-gray-700">|</span>
             <Link href="#" className="hover:text-white transition-colors">Sitemap</Link>
           </div>

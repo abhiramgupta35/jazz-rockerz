@@ -2,20 +2,6 @@ import { BranchItem } from "../types";
 
 export const BRANCHES: BranchItem[] = [
   {
-    id: "head-office",
-    name: "Jazzrockers Head Office — Al Nahda, Sharjah",
-    slug: "head-office",
-    tagline: "Jazzrockers Headquarters",
-    location: "Al Nahda 1, Sharjah, UAE",
-    addressPlaceholder: "Emirates N Tower, Office No. 205, Al Nahda 1, Sharjah, United Arab Emirates",
-    phone: "+971 800 509",
-    whatsapp: "+971 800 509",
-    email: "contact@jazzrockers.com",
-    openingHours: "Mon–Fri: 8:45 AM – 8:45 PM (Lunch: 1:00 PM – 3:00 PM) | Sat–Sun: 8:45 AM – 8:00 PM (Lunch: 2:00 PM – 3:00 PM)",
-    programsOffered: ["Dance", "Music", "Gymnastics", "Fine Arts"],
-    amenities: ["Head Office"],
-  },
-  {
     id: "al-nahda",
     name: "Al Nahda Branch — Dubai",
     slug: "al-nahda",
@@ -70,5 +56,19 @@ export const BRANCHES: BranchItem[] = [
     openingHours: "Mon–Fri: 8:45 AM – 8:45 PM (Lunch: 1:00 PM – 3:00 PM) | Sat–Sun: 8:45 AM – 8:00 PM (Lunch: 2:00 PM – 3:00 PM)",
     programsOffered: ["Dance", "Music", "Gymnastics", "Fine Arts", "Summer Camp"],
     amenities: ["Premium facilities", "Convenient access"],
+  },
+  {
+    id: "head-office",
+    name: "Jazzrockers Head Office — Al Nahda, Sharjah",
+    slug: "head-office",
+    tagline: "Jazzrockers Headquarters",
+    location: "Al Nahda 1, Sharjah, UAE",
+    addressPlaceholder: "Emirates N Tower, Office No. 205, Al Nahda 1, Sharjah, United Arab Emirates",
+    phone: "+971 800 509",
+    whatsapp: "+971 800 509",
+    email: "contact@jazzrockers.com",
+    openingHours: "Mon–Fri: 8:45 AM – 8:45 PM (Lunch: 1:00 PM – 3:00 PM) | Sat–Sun: 8:45 AM – 8:00 PM (Lunch: 2:00 PM – 3:00 PM)",
+    programsOffered: ["Dance", "Music", "Gymnastics", "Fine Arts"],
+    amenities: ["Head Office"],
   },
 ];

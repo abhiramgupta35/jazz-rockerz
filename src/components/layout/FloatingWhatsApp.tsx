@@ -12,7 +12,7 @@ export const FloatingWhatsApp: React.FC = () => {
     e.preventDefault();
     trackEvent("whatsapp_click", { location: "floating_button" });
     openWhatsAppModal({
-      title: "Chat with JazzRockers on WhatsApp",
+      title: "Chat with Jazzrockers on WhatsApp",
       subtitle: "Our admissions advisors are online to answer class schedules, fees, and location queries.",
       message: DEFAULT_GENERAL_ENQUIRY_MESSAGE,
     });

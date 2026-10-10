@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { User, Phone, Calendar, ChevronDown, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
+import { User, Phone, Baby, ChevronDown, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
 import { BRANCHES } from "@/lib/data/branches";
 import { useModal } from "@/context/ModalContext";
 import { formatTrialBookingMessage } from "@/lib/whatsapp";
@@ -17,7 +17,7 @@ interface FreeTrialFormProps {
 
 export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
   className = "",
-  defaultProgram = "Dance",
+  defaultProgram = "",
   defaultBranch = "",
   onSuccess,
 }) => {
@@ -26,10 +26,15 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
   const [parentName, setParentName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [childAge, setChildAge] = useState("");
-  const [interestedIn, setInterestedIn] = useState(defaultProgram);
-  const [preferredBranch, setPreferredBranch] = useState(defaultBranch || BRANCHES[0]?.id || "");
+  const [interestedIn, setInterestedIn] = useState(defaultProgram || "");
+  const [preferredBranch, setPreferredBranch] = useState(defaultBranch || "");
 
-  const [errors, setErrors] = useState<{ parentName?: string; phoneNumber?: string }>({});
+  const [errors, setErrors] = useState<{
+    parentName?: string;
+    phoneNumber?: string;
+    interestedIn?: string;
+    preferredBranch?: string;
+  }>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [lastSubmittedMessage, setLastSubmittedMessage] = useState("");
 
@@ -47,7 +52,12 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
   }, [defaultBranch]);
 
   const validate = () => {
-    const newErrors: { parentName?: string; phoneNumber?: string } = {};
+    const newErrors: {
+      parentName?: string;
+      phoneNumber?: string;
+      interestedIn?: string;
+      preferredBranch?: string;
+    } = {};
 
     if (!parentName.trim() || parentName.trim().length < 2) {
       newErrors.parentName = "Please enter parent or guardian name";
@@ -56,6 +66,14 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
     const digitsOnly = phoneNumber.replace(/\D/g, "");
     if (!digitsOnly || digitsOnly.length < 7) {
       newErrors.phoneNumber = "Please enter a valid phone or WhatsApp number";
+    }
+
+    if (!interestedIn) {
+      newErrors.interestedIn = "Please select a program";
+    }
+
+    if (!preferredBranch) {
+      newErrors.preferredBranch = "Please select a branch location";
     }
 
     setErrors(newErrors);
@@ -163,6 +181,8 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
               setParentName("");
               setPhoneNumber("");
               setChildAge("");
+              setInterestedIn("");
+              setPreferredBranch("");
             }}
             className="text-xs text-gray-500 hover:text-[#E31E24] font-semibold underline transition-colors pt-2"
           >
@@ -239,40 +259,82 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
               aria-label="Child's Age"
               className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] focus:outline-none focus:border-[#E31E24] text-gray-800 font-medium placeholder-gray-400"
             />
-            <Calendar className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+            <Baby className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
           </div>
 
           {/* Interested In */}
-          <div className="relative">
-            <select
-              value={interestedIn}
-              onChange={(e) => setInterestedIn(e.target.value)}
-              aria-label="Interested In Program"
-              className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] appearance-none bg-white focus:outline-none focus:border-[#E31E24] text-gray-700 font-medium cursor-pointer"
-            >
-              <option value="Dance">Dance (Ballet, Hip Hop, Bollywood, Classical)</option>
-              <option value="Music">Music (Piano, Guitar, Drums, Vocal, Violin)</option>
-              <option value="Gymnastics">Gymnastics & Acro</option>
-              <option value="Fine Arts">Fine Arts & Painting</option>
-            </select>
-            <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+          <div>
+            <div className="relative">
+              <select
+                value={interestedIn}
+                onChange={(e) => {
+                  setInterestedIn(e.target.value);
+                  if (errors.interestedIn) setErrors((prev) => ({ ...prev, interestedIn: undefined }));
+                }}
+                aria-label="Interested In Program"
+                className={`w-full pl-5 pr-12 py-3.5 rounded-xl border text-[15px] appearance-none bg-white focus:outline-none transition-colors cursor-pointer ${
+                  !interestedIn ? "text-gray-400 font-normal" : "text-gray-800 font-medium"
+                } ${
+                  errors.interestedIn
+                    ? "border-red-500 focus:border-red-600 bg-red-50/20"
+                    : "border-gray-200 focus:border-[#E31E24]"
+                }`}
+              >
+                <option value="" className="text-gray-400">
+                  Select Program *
+                </option>
+                <option value="Dance" className="text-gray-800">
+                  Dance (Ballet, Hip Hop, Bollywood, Classical)
+                </option>
+                <option value="Music" className="text-gray-800">
+                  Music (Piano, Guitar, Drums, Vocal, Violin)
+                </option>
+                <option value="Gymnastics" className="text-gray-800">
+                  Gymnastics & Acro
+                </option>
+                <option value="Fine Arts" className="text-gray-800">
+                  Fine Arts & Painting
+                </option>
+              </select>
+              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+            </div>
+            {errors.interestedIn && (
+              <p className="text-red-500 text-xs mt-1 font-semibold pl-1">{errors.interestedIn}</p>
+            )}
           </div>
 
           {/* Preferred Branch */}
-          <div className="relative">
-            <select
-              value={preferredBranch}
-              onChange={(e) => setPreferredBranch(e.target.value)}
-              aria-label="Preferred Branch"
-              className="w-full pl-5 pr-12 py-3.5 rounded-xl border border-gray-200 text-[15px] appearance-none bg-white focus:outline-none focus:border-[#E31E24] text-gray-700 font-medium cursor-pointer"
-            >
-              {BRANCHES.map((branch) => (
-                <option key={branch.id} value={branch.id}>
-                  {branch.name}
+          <div>
+            <div className="relative">
+              <select
+                value={preferredBranch}
+                onChange={(e) => {
+                  setPreferredBranch(e.target.value);
+                  if (errors.preferredBranch) setErrors((prev) => ({ ...prev, preferredBranch: undefined }));
+                }}
+                aria-label="Preferred Branch"
+                className={`w-full pl-5 pr-12 py-3.5 rounded-xl border text-[15px] appearance-none bg-white focus:outline-none transition-colors cursor-pointer ${
+                  !preferredBranch ? "text-gray-400 font-normal" : "text-gray-800 font-medium"
+                } ${
+                  errors.preferredBranch
+                    ? "border-red-500 focus:border-red-600 bg-red-50/20"
+                    : "border-gray-200 focus:border-[#E31E24]"
+                }`}
+              >
+                <option value="" className="text-gray-400">
+                  Select Preferred Branch *
                 </option>
-              ))}
-            </select>
-            <MapPin className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+                {BRANCHES.map((branch) => (
+                  <option key={branch.id} value={branch.id} className="text-gray-800">
+                    {branch.name}
+                  </option>
+                ))}
+              </select>
+              <MapPin className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+            </div>
+            {errors.preferredBranch && (
+              <p className="text-red-500 text-xs mt-1 font-semibold pl-1">{errors.preferredBranch}</p>
+            )}
           </div>
 
           {/* Submit Button */}
