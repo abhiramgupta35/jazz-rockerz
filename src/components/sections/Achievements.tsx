@@ -39,7 +39,7 @@ export const Achievements: React.FC = () => {
           {/* Right Background Image */}
           <div className="absolute inset-y-0 right-0 w-full md:w-[65%] z-0">
             <Image
-              src="/images/ACHIEVEMENTS THAT INSPIRE.webp"
+              src="/images/achievements-inspire.webp"
               alt="Achievements"
               fill
               className="object-cover object-right lg:object-center"

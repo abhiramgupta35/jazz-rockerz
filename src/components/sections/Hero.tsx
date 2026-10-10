@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/Hero-Dance.webp"
+          src="/images/hero-dance.webp"
           alt="Hero Dance"
           fill
           priority

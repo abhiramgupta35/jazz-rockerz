@@ -92,7 +92,7 @@ export const AdmissionCTA: React.FC = () => {
             className="w-full h-full relative"
           >
             <Image
-              src="/images/Admission-Open.webp"
+              src="/images/admission-open.webp"
               alt="Student Pointing"
               fill
               className="object-contain object-bottom"
@@ -104,7 +104,7 @@ export const AdmissionCTA: React.FC = () => {
         {/* Mobile only image */}
         <div className="block lg:hidden w-full h-[250px] relative mt-6 mb-0 z-20 pointer-events-none">
           <Image
-            src="/images/Admission-Open.webp"
+            src="/images/admission-open.webp"
             alt="Student Pointing"
             fill
             className="object-contain object-bottom"
