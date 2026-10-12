@@ -10,8 +10,11 @@ export const Header: React.FC = () => {
   const { openModal, openWhatsAppModal } = useModal();
   
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Programs", href: "#programs" },
+    { name: "Why Us", href: "#why-choose-us" },
+    { name: "Achievements", href: "#achievements" },
+    { name: "Gallery", href: "#gallery" },
+    { name: "Admissions", href: "#admissions" },
   ];
 
   return (

@@ -61,10 +61,11 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-3.5 text-[15px]">
               {[
-                { name: "Programs", href: "/#programs" },
-                { name: "Gallery", href: "/#gallery" },
-                { name: "Admissions", href: "/#admissions" },
-                { name: "Contact Us", href: "/contact" },
+                { name: "Programs", href: "#programs" },
+                { name: "Why Us", href: "#why-choose-us" },
+                { name: "Admissions", href: "#admissions" },
+                { name: "Gallery", href: "#gallery" },
+                { name: "Testimonials", href: "#testimonials" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
@@ -143,15 +144,9 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between text-[13.5px] text-gray-300 gap-4">
+        <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between text-[13.5px] text-gray-400 gap-4">
           <p suppressHydrationWarning>© {currentYear} JazzRockers. All Rights Reserved.</p>
-          <div className="flex items-center gap-4">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <span className="text-gray-700">|</span>
-            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
-            <span className="text-gray-700">|</span>
-            <Link href="#" className="hover:text-white transition-colors">Sitemap</Link>
-          </div>
+          <p className="text-gray-500 text-xs">Empowering the next generation with world-class performing arts instruction.</p>
         </div>
       </div>
     </motion.footer>
