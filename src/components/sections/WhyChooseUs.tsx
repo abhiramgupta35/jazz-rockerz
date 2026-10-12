@@ -11,7 +11,6 @@ import {
   CalendarCheck,
   FileText,
   Download,
-  Eye,
 } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
 
@@ -168,30 +167,19 @@ export const WhyChooseUs: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto shrink-0">
+            {/* Right Download Button */}
+            <div className="shrink-0 w-full sm:w-auto">
               <a
                 href="/JazzRockers_Brochure.pdf"
                 download="JazzRockers_Brochure.pdf"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-brand-primary hover:bg-brand-primary-hover text-white font-bold text-sm sm:text-base shadow-primary hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-primary group cursor-pointer select-none"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-brand-primary hover:bg-brand-primary-hover text-white font-bold text-sm sm:text-base shadow-primary hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-primary group cursor-pointer select-none"
                 aria-label="Download JazzRockers Academy Brochure (PDF)"
               >
                 <Download className="w-5 h-5 transition-transform duration-200 group-hover:translate-y-0.5 shrink-0" />
                 <span>Download Brochure</span>
-                <span className="text-[11px] font-semibold bg-black/20 px-2 py-0.5 rounded-full shrink-0">
+                <span className="text-[11px] font-semibold bg-black/20 px-2.5 py-0.5 rounded-full shrink-0">
                   PDF • 630 KB
                 </span>
-              </a>
-
-              <a
-                href="/JazzRockers_Brochure.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white group cursor-pointer select-none"
-                aria-label="Preview JazzRockers Academy Brochure in a new tab"
-              >
-                <Eye className="w-4 h-4 text-gray-300 group-hover:text-white transition-colors shrink-0" />
-                <span>Preview</span>
               </a>
             </div>
           </div>
