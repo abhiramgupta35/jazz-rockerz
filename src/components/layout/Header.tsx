@@ -1,39 +1,18 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { Phone } from "lucide-react";
 import { Logo } from "../ui/Logo";
 import { useModal } from "@/context/ModalContext";
 
 export const Header: React.FC = () => {
   const { openModal, openWhatsAppModal } = useModal();
-  
-  const navLinks = [
-    { name: "Programs", href: "#programs" },
-    { name: "Why Us", href: "#why-choose-us" },
-    { name: "Achievements", href: "#achievements" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Admissions", href: "#admissions" },
-  ];
 
   return (
     <header className="absolute top-0 z-40 w-full bg-white rounded-b-[2.5rem] shadow-sm px-4 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between">
       <div className="shrink-0 pl-1 sm:pl-4">
         <Logo variant="dark" />
       </div>
-
-      <nav className="hidden lg:flex items-center gap-6">
-        {navLinks.map((item) => (
-          <Link
-            key={item.name}
-            href={item.href}
-            className="flex items-center gap-1 text-[15px] font-bold text-black hover:text-[#E31E24] transition-colors"
-          >
-            {item.name}
-          </Link>
-        ))}
-      </nav>
 
       <div className="hidden lg:flex items-center gap-6 pr-4">
         <div className="flex items-center gap-2">
