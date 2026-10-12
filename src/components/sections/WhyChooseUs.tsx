@@ -6,15 +6,16 @@ import {
   GraduationCap,
   Sparkles,
   Trophy,
-  Globe2,
   ShieldCheck,
   CalendarCheck,
   FileText,
   Download,
 } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
+import { useModal } from "@/context/ModalContext";
 
 export const WhyChooseUs: React.FC = () => {
+  const { openBrochureModal } = useModal();
   const cards = [
     {
       icon: <GraduationCap className="w-6 h-6 text-brand-primary" />,
@@ -33,12 +34,6 @@ export const WhyChooseUs: React.FC = () => {
       title: "Performance",
       desc: "Stage exposure & annual mega events",
       badge: "Stage Ready",
-    },
-    {
-      icon: <Globe2 className="w-6 h-6 text-blue-500" />,
-      title: "International Opportunities",
-      desc: "Competitions & global exposure",
-      badge: "Global",
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-emerald-500" />,
@@ -169,9 +164,9 @@ export const WhyChooseUs: React.FC = () => {
 
             {/* Right Download Button */}
             <div className="shrink-0 w-full sm:w-auto">
-              <a
-                href="/JazzRockers_Brochure.pdf"
-                download="JazzRockers_Brochure.pdf"
+              <button
+                type="button"
+                onClick={openBrochureModal}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-brand-primary hover:bg-brand-primary-hover text-white font-bold text-sm sm:text-base shadow-primary hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-primary group cursor-pointer select-none"
                 aria-label="Download JazzRockers Academy Brochure (PDF)"
               >
@@ -180,7 +175,7 @@ export const WhyChooseUs: React.FC = () => {
                 <span className="text-[11px] font-semibold bg-black/20 px-2.5 py-0.5 rounded-full shrink-0">
                   PDF • 630 KB
                 </span>
-              </a>
+              </button>
             </div>
           </div>
         </motion.div>

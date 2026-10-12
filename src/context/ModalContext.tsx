@@ -21,6 +21,11 @@ interface ModalContextType {
   whatsAppData: WhatsAppModalOptions;
   openWhatsAppModal: (options?: WhatsAppModalOptions) => void;
   closeWhatsAppModal: () => void;
+
+  // Brochure Download Modal State
+  isBrochureOpen: boolean;
+  openBrochureModal: () => void;
+  closeBrochureModal: () => void;
 }
 
 const defaultWhatsAppData: WhatsAppModalOptions = {
@@ -43,6 +48,8 @@ export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
   const [whatsAppData, setWhatsAppData] = useState<WhatsAppModalOptions>(defaultWhatsAppData);
+
+  const [isBrochureOpen, setIsBrochureOpen] = useState(false);
 
   const openModal = (initialProgram?: string) => {
     setDefaultProgram(initialProgram || "");
@@ -71,6 +78,14 @@ export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({
     setIsWhatsAppOpen(false);
   };
 
+  const openBrochureModal = () => {
+    setIsBrochureOpen(true);
+  };
+
+  const closeBrochureModal = () => {
+    setIsBrochureOpen(false);
+  };
+
   return (
     <ModalContext.Provider
       value={{
@@ -82,6 +97,9 @@ export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({
         whatsAppData,
         openWhatsAppModal,
         closeWhatsAppModal,
+        isBrochureOpen,
+        openBrochureModal,
+        closeBrochureModal,
       }}
     >
       {children}
