@@ -77,7 +77,7 @@ export const WhyChooseUs: React.FC = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden" id="why-choose-us">
+    <section className="pt-14 sm:pt-16 lg:pt-20 pb-4 sm:pb-6 relative overflow-hidden" id="why-choose-us">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="Why JazzRockers"
