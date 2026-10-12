@@ -80,7 +80,7 @@ export const Achievements: React.FC = () => {
   };
 
   return (
-    <section className="pt-2 sm:pt-4 md:pt-6 pb-12 sm:pb-16 md:pb-20 lg:pb-24 relative" id="achievements">
+    <section className="pt-2 sm:pt-4 md:pt-6 pb-4 sm:pb-6 md:pb-8 relative" id="achievements">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
