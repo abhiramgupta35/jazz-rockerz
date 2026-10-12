@@ -15,7 +15,7 @@ export const AdmissionCTA: React.FC = () => {
         <svg className="absolute top-1/3 right-[30%] w-40 h-40 text-[#9b59b6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full min-h-0 lg:min-h-[550px] flex flex-col lg:flex-row items-center justify-between pt-6 sm:pt-10 lg:pt-16 pb-0 lg:py-0">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full min-h-0 lg:min-h-[500px] flex flex-col lg:flex-row items-center justify-between pt-4 sm:pt-6 lg:pt-6 pb-0">
         
         {/* Left Column: Text and Icons */}
         <motion.div 
@@ -23,7 +23,7 @@ export const AdmissionCTA: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="w-full lg:w-[50%] flex flex-col justify-center py-2 sm:py-4 lg:py-24 z-30"
+          className="w-full lg:w-[50%] flex flex-col justify-center py-2 sm:py-4 lg:pt-6 lg:pb-12 z-30"
         >
           <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-[4rem] font-black uppercase tracking-tight leading-[1.08] mb-1.5 sm:mb-2 text-center lg:text-left">
             ADMISSIONS <span className="text-[#E31E24]">OPEN!</span>
@@ -120,7 +120,7 @@ export const AdmissionCTA: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
-          className="w-full lg:w-[40%] flex items-center justify-center lg:justify-end pb-10 pt-0 lg:py-24 z-30"
+          className="w-full lg:w-[40%] flex items-center justify-center lg:justify-end pb-10 pt-0 lg:pt-6 lg:pb-12 z-30"
         >
           <FreeTrialForm className="w-full max-w-[420px] shadow-2xl relative z-30" />
         </motion.div>
