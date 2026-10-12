@@ -6,6 +6,7 @@ import {
   GraduationCap,
   Sparkles,
   Trophy,
+  Globe2,
   ShieldCheck,
   CalendarCheck,
   FileText,
@@ -34,6 +35,12 @@ export const WhyChooseUs: React.FC = () => {
       title: "Performance",
       desc: "Stage exposure & annual mega events",
       badge: "Stage Ready",
+    },
+    {
+      icon: <Globe2 className="w-6 h-6 text-blue-500" />,
+      title: "International Opportunities",
+      desc: "Competitions & global exposure",
+      badge: "Global",
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-emerald-500" />,

@@ -267,11 +267,10 @@ export const BrochureModal: React.FC = () => {
                                 }
                               }}
                               placeholder="Name"
-                              className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-gray-900 placeholder-gray-400 transition-all focus:outline-none focus:ring-2 ${
-                                errors.name
+                              className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-gray-900 placeholder-gray-400 transition-all focus:outline-none focus:ring-2 ${errors.name
                                   ? "border-red-400 bg-red-50/30 focus:ring-red-400"
                                   : "border-gray-200 bg-gray-50/50 hover:border-gray-300 focus:bg-white focus:border-brand-primary focus:ring-brand-primary/20"
-                              }`}
+                                }`}
                             />
                           </div>
                           {errors.name && (
@@ -304,11 +303,10 @@ export const BrochureModal: React.FC = () => {
                                 }
                               }}
                               placeholder="e.g. 5–7 yrs, 8–12 yrs, Adult"
-                              className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-gray-900 placeholder-gray-400 transition-all focus:outline-none focus:ring-2 ${
-                                errors.age
+                              className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-gray-900 placeholder-gray-400 transition-all focus:outline-none focus:ring-2 ${errors.age
                                   ? "border-red-400 bg-red-50/30 focus:ring-red-400"
                                   : "border-gray-200 bg-gray-50/50 hover:border-gray-300 focus:bg-white focus:border-brand-primary focus:ring-brand-primary/20"
-                              }`}
+                                }`}
                             />
                           </div>
                           {errors.age && (
