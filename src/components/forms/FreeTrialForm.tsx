@@ -1,11 +1,30 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { User, Phone, Baby, ChevronDown, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import { User, Phone, Baby, ChevronDown, Check, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
 import { BRANCHES } from "@/lib/data/branches";
 import { useModal } from "@/context/ModalContext";
 import { formatTrialBookingMessage } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
+
+export const PROGRAM_OPTIONS = [
+  "Bollywood Dance",
+  "Hip Hop",
+  "Bharatanatyam",
+  "Ballet",
+  "Gymnastics",
+  "Bollywood Fitness (Adults)",
+  "Zumba (Adults)",
+  "Piano",
+  "Keyboard",
+  "Guitar",
+  "Drums",
+  "Western Violin",
+  "Western Vocal",
+  "Carnatic Vocal",
+  "Fine Arts",
+  "Art and Craft",
+];
 
 interface FreeTrialFormProps {
   className?: string;
@@ -28,6 +47,8 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
   const [childAge, setChildAge] = useState("");
   const [interestedIn, setInterestedIn] = useState(defaultProgram || "");
   const [preferredBranch, setPreferredBranch] = useState(defaultBranch || "");
+  const [isProgramDropdownOpen, setIsProgramDropdownOpen] = useState(false);
+  const programDropdownRef = useRef<HTMLDivElement>(null);
 
   const [errors, setErrors] = useState<{
     parentName?: string;
@@ -37,6 +58,20 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
   }>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [lastSubmittedMessage, setLastSubmittedMessage] = useState("");
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        programDropdownRef.current &&
+        !programDropdownRef.current.contains(e.target as Node)
+      ) {
+        setIsProgramDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Sync defaultProgram if prop updates
   useEffect(() => {
@@ -264,39 +299,68 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
 
           {/* Interested In */}
           <div>
-            <div className="relative">
-              <select
-                value={interestedIn}
-                onChange={(e) => {
-                  setInterestedIn(e.target.value);
-                  if (errors.interestedIn) setErrors((prev) => ({ ...prev, interestedIn: undefined }));
-                }}
-                aria-label="Interested In Program"
-                className={`w-full pl-5 pr-12 py-3.5 rounded-xl border text-[15px] appearance-none bg-white focus:outline-none transition-colors cursor-pointer ${
+            <div className="relative" ref={programDropdownRef}>
+              <button
+                type="button"
+                onClick={() => setIsProgramDropdownOpen((prev) => !prev)}
+                aria-haspopup="listbox"
+                aria-expanded={isProgramDropdownOpen}
+                aria-label="Select Program"
+                className={`w-full pl-5 pr-12 py-3.5 rounded-xl border text-[15px] bg-white text-left flex items-center justify-between transition-colors cursor-pointer select-none ${
                   !interestedIn ? "text-gray-400 font-normal" : "text-gray-800 font-medium"
                 } ${
                   errors.interestedIn
                     ? "border-red-500 focus:border-red-600 bg-red-50/20"
-                    : "border-gray-200 focus:border-[#E31E24]"
+                    : isProgramDropdownOpen
+                    ? "border-[#E31E24] ring-2 ring-[#E31E24]/10"
+                    : "border-gray-200 hover:border-gray-300 focus:border-[#E31E24]"
                 }`}
               >
-                <option value="" className="text-gray-400">
-                  Select Program *
-                </option>
-                <option value="Dance" className="text-gray-800">
-                  Dance (Ballet, Hip Hop, Bollywood, Classical)
-                </option>
-                <option value="Music" className="text-gray-800">
-                  Music (Piano, Guitar, Drums, Vocal, Violin)
-                </option>
-                <option value="Gymnastics" className="text-gray-800">
-                  Gymnastics & Acro
-                </option>
-                <option value="Fine Arts" className="text-gray-800">
-                  Fine Arts & Painting
-                </option>
-              </select>
-              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+                <span className="truncate">{interestedIn || "Select Program *"}</span>
+                <ChevronDown
+                  className={`w-5 h-5 text-gray-400 transition-transform duration-200 shrink-0 ${
+                    isProgramDropdownOpen ? "rotate-180 text-[#E31E24]" : ""
+                  }`}
+                />
+              </button>
+
+              {/* Scrollable Dropdown Menu with Scrollbar */}
+              {isProgramDropdownOpen && (
+                <div
+                  role="listbox"
+                  className="absolute left-0 right-0 top-full mt-1.5 bg-white rounded-xl border border-gray-200 shadow-xl z-30 max-h-56 overflow-y-auto divide-y divide-gray-50 py-1 custom-scrollbar"
+                  style={{
+                    scrollbarWidth: "thin",
+                    scrollbarColor: "#CBD5E1 #F8FAFC",
+                  }}
+                >
+                  {PROGRAM_OPTIONS.map((program) => {
+                    const isSelected = interestedIn === program;
+                    return (
+                      <div
+                        key={program}
+                        role="option"
+                        aria-selected={isSelected}
+                        onClick={() => {
+                          setInterestedIn(program);
+                          setIsProgramDropdownOpen(false);
+                          if (errors.interestedIn) {
+                            setErrors((prev) => ({ ...prev, interestedIn: undefined }));
+                          }
+                        }}
+                        className={`px-4 py-2.5 text-[14px] cursor-pointer flex items-center justify-between transition-colors ${
+                          isSelected
+                            ? "bg-red-50 text-[#E31E24] font-bold"
+                            : "text-gray-700 hover:bg-gray-50 hover:text-[#E31E24]"
+                        }`}
+                      >
+                        <span>{program}</span>
+                        {isSelected && <Check className="w-4 h-4 text-[#E31E24] shrink-0" />}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
             {errors.interestedIn && (
               <p className="text-red-500 text-xs mt-1 font-semibold pl-1">{errors.interestedIn}</p>
