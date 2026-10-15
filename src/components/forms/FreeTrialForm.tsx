@@ -3,8 +3,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { User, Phone, Baby, ChevronDown, Check, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
 import { BRANCHES } from "@/lib/data/branches";
-import { useModal } from "@/context/ModalContext";
-import { formatTrialBookingMessage } from "@/lib/whatsapp";
+import {
+  JAZZROCKERS_WHATSAPP_NUMBER,
+  formatTrialBookingMessage,
+  openWhatsApp,
+} from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
 
 export const PROGRAM_OPTIONS = [
@@ -40,8 +43,6 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
   defaultBranch = "",
   onSuccess,
 }) => {
-  const { openWhatsAppModal } = useModal();
-
   const [parentName, setParentName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [childAge, setChildAge] = useState("");
@@ -143,15 +144,8 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
       branch: preferredBranch,
     });
 
-    // Open WhatsApp Confirmation Modal with formatted details
-    openWhatsAppModal({
-      isFormSubmission: true,
-      title: "Booking Received! Confirm on WhatsApp",
-      subtitle:
-        "Your free trial details are ready. Continue to WhatsApp to send them to our admissions team instantly.",
-      badge: "Trial Booking",
-      message: formattedMessage,
-    });
+    // Redirect directly to WhatsApp with formatted details
+    openWhatsApp(JAZZROCKERS_WHATSAPP_NUMBER, formattedMessage);
 
     if (onSuccess) {
       onSuccess();
@@ -160,14 +154,8 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
 
   const handleReopenWhatsApp = () => {
     if (lastSubmittedMessage) {
-      openWhatsAppModal({
-        isFormSubmission: true,
-        title: "Booking Received! Confirm on WhatsApp",
-        subtitle:
-          "Your free trial details are ready. Continue to WhatsApp to send them to our admissions team instantly.",
-        badge: "Trial Booking",
-        message: lastSubmittedMessage,
-      });
+      trackEvent("whatsapp_click", { location: "form_success_reopen" });
+      openWhatsApp(JAZZROCKERS_WHATSAPP_NUMBER, lastSubmittedMessage);
     }
   };
 

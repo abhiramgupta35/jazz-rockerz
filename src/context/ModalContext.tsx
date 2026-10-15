@@ -7,6 +7,7 @@ import {
   JAZZROCKERS_WHATSAPP_DISPLAY,
   JAZZROCKERS_WHATSAPP_NUMBER,
   WhatsAppModalOptions,
+  openWhatsApp,
 } from "@/lib/whatsapp";
 
 interface ModalContextType {
@@ -61,17 +62,10 @@ export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const openWhatsAppModal = (options?: WhatsAppModalOptions) => {
-    setWhatsAppData({
-      title: options?.title || defaultWhatsAppData.title,
-      subtitle: options?.subtitle || defaultWhatsAppData.subtitle,
-      phone: options?.phone || defaultWhatsAppData.phone,
-      displayPhone: options?.displayPhone || defaultWhatsAppData.displayPhone,
-      message: options?.message || defaultWhatsAppData.message,
-      badge: options?.badge || (options?.isFormSubmission ? "Form Submitted" : defaultWhatsAppData.badge),
-      isFormSubmission: Boolean(options?.isFormSubmission),
-      onConfirm: options?.onConfirm,
-    });
-    setIsWhatsAppOpen(true);
+    if (options?.onConfirm) {
+      options.onConfirm();
+    }
+    openWhatsApp(options?.phone, options?.message || defaultWhatsAppData.message);
   };
 
   const closeWhatsAppModal = () => {

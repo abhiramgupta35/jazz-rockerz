@@ -4,10 +4,15 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useModal } from "@/context/ModalContext";
 import { trackEvent } from "@/lib/analytics";
+import {
+  DEFAULT_GENERAL_ENQUIRY_MESSAGE,
+  JAZZROCKERS_WHATSAPP_NUMBER,
+  getWhatsAppUrl,
+} from "@/lib/whatsapp";
 
 export const StickyMobileCTA: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { openModal, openWhatsAppModal } = useModal();
+  const { openModal } = useModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,12 +60,13 @@ export const StickyMobileCTA: React.FC = () => {
                 </svg>
               </a>
 
-              {/* WHATSAPP — Premium Inset Pod Pill with Confirmation Modal */}
-              <button
-                type="button"
+              {/* WHATSAPP — Direct WhatsApp Link */}
+              <a
+                href={getWhatsAppUrl(JAZZROCKERS_WHATSAPP_NUMBER, DEFAULT_GENERAL_ENQUIRY_MESSAGE)}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => {
                   trackEvent("whatsapp_click", { location: "sticky_bottom_bar" });
-                  openWhatsAppModal();
                 }}
                 className="group flex-1 flex items-center justify-between pl-1 pr-2 py-1 rounded-full bg-gradient-to-r from-emerald-50/90 via-teal-50 to-green-50/80 hover:from-emerald-100 hover:to-teal-100 border border-emerald-200/70 shadow-[0_2px_8px_rgba(16,185,129,0.08)] transition-all duration-200 active:scale-[0.95]"
                 aria-label="WhatsApp JazzRockers"
@@ -75,7 +81,7 @@ export const StickyMobileCTA: React.FC = () => {
                 <svg className="w-2.5 h-2.5 text-emerald-800/40 shrink-0 ml-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
+              </a>
 
               {/* BOOK FREE TRIAL — Premium Pill with Inset Pod & Jump Animation */}
               <button

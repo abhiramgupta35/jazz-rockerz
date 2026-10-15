@@ -48,6 +48,18 @@ export function getWhatsAppUrl(phone = JAZZROCKERS_WHATSAPP_NUMBER, text = ""): 
 }
 
 /**
+ * Directly redirects to WhatsApp deep link in a new tab/window, falling back to current window
+ */
+export function openWhatsApp(phone = JAZZROCKERS_WHATSAPP_NUMBER, text = DEFAULT_GENERAL_ENQUIRY_MESSAGE): void {
+  if (typeof window === "undefined") return;
+  const url = getWhatsAppUrl(phone, text);
+  const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+  if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
+    window.location.href = url;
+  }
+}
+
+/**
  * Formats structured free trial form submission into a professional WhatsApp enquiry message
  */
 export function formatTrialBookingMessage(data: WhatsAppBookingPayload): string {

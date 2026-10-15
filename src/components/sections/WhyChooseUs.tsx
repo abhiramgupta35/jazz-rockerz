@@ -80,7 +80,7 @@ export const WhyChooseUs: React.FC = () => {
     <section className="pt-14 sm:pt-16 lg:pt-20 pb-4 sm:pb-6 relative overflow-hidden" id="why-choose-us">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
-          badge="Why JazzRockers"
+          badge="Why Jazzrockers"
           title="WHY PARENTS CHOOSE JAZZROCKERS"
           highlightWord="JAZZROCKERS"
           subtitle="Empowering the next generation with world-class performing arts instruction, confidence, and limitless imagination."

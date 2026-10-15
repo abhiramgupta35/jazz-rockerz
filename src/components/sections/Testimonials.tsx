@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export const Testimonials: React.FC = () => {
   const testimonials = [
     {
-      quote: "JazzRockers has transformed my daughter. She is more confident and passionate about dance now!",
+      quote: "Jazzrockers has transformed my daughter. She is more confident and passionate about dance now!",
       name: "Priya Sharma",
       location: "Al Nahda, Dubai",
       avatar: "/images/avatar-1.webp"

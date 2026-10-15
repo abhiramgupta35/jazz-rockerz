@@ -47,7 +47,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     alt: "Ensemble group of students celebrating with hands raised on stage",
     category: "events",
     title: "Group Performances & Mega Events",
-    caption: "Triumphant finale celebration at the JazzRockers World Record event",
+    caption: "Triumphant finale celebration at the Jazzrockers World Record event",
   },
   {
     id: "g-7",
