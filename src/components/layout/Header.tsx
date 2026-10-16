@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackEvent("whatsapp_click", { location: "header" })}
-          aria-label="WhatsApp JazzRockers"
+          aria-label="WhatsApp Jazzrockers"
           className="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:bg-[#1ebe57] shadow-sm hover:shadow-md transition-all active:scale-95"
         >
           <svg viewBox="0 0 448 512" className="w-5 h-5 fill-current">

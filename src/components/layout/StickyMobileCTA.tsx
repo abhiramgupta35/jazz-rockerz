@@ -46,7 +46,7 @@ export const StickyMobileCTA: React.FC = () => {
                 href="tel:+97143445990"
                 onClick={() => trackEvent("phone_click", { location: "sticky_bottom_bar" })}
                 className="group flex-1 flex items-center justify-between pl-1 pr-2 py-1 rounded-full bg-gradient-to-r from-blue-50/90 via-sky-50 to-indigo-50/80 hover:from-blue-100 hover:to-indigo-100 border border-blue-200/70 shadow-[0_2px_8px_rgba(43,53,130,0.08)] transition-all duration-200 active:scale-[0.95]"
-                aria-label="Call JazzRockers"
+                aria-label="Call Jazzrockers"
               >
                 {/* Elevated white circle pod with icon */}
                 <div className="w-[26px] h-[26px] rounded-full bg-white shadow-[0_2px_5px_rgba(43,53,130,0.18)] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">

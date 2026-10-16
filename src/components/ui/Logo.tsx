@@ -22,12 +22,12 @@ export const Logo: React.FC<LogoProps> = ({
     <Link
       href="/"
       className={`group inline-flex flex-row items-center gap-2 sm:gap-3 select-none focus:outline-none ${className}`}
-      aria-label="JazzRockers Academy Home"
+      aria-label="Jazzrockers Academy Home"
     >
       <div className="relative flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 shrink-0 bg-transparent rounded-xl p-1 overflow-hidden">
         <Image 
           src="/images/jazz-logo.webp"
-          alt="JazzRockers Logo"
+          alt="Jazzrockers Logo"
           fill
           className="object-contain"
           sizes="(max-width: 640px) 40px, 56px"

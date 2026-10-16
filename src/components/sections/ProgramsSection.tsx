@@ -60,7 +60,7 @@ export const ProgramsSection: React.FC = () => {
               <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-brand-secondary">
                 <Image
                   src={prog.heroImage}
-                  alt={`${prog.name} classes at JazzRockers`}
+                  alt={`${prog.name} classes at Jazzrockers`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   className="object-cover object-center group-hover:scale-110 transition-transform duration-500 ease-out"

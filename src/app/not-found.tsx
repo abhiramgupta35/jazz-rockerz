@@ -14,7 +14,7 @@ export default function NotFound() {
           Page Not Found
         </h1>
         <p className="text-sm text-gray-600">
-          The page you are looking for might have been moved or doesn&apos;t exist. Return to JazzRockers homepage to discover our programs.
+          The page you are looking for might have been moved or doesn&apos;t exist. Return to Jazzrockers homepage to discover our programs.
         </p>
         <div className="pt-2">
           <Link href="/">

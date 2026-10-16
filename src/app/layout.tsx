@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jazzrockers.ae"),
-  title: "JazzRockers | Dance, Music, Gymnastics & Fine Arts Academy in Dubai",
+  title: "Jazzrockers | Dance, Music, Gymnastics & Fine Arts Academy in Dubai",
   description:
     "The UAE's Leading Academy for Dance, Music, Gymnastics & Fine Arts. 20+ professional programs for ages 2.5+. Book your FREE trial class across 5 Dubai studios today!",
   keywords: [
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
     "piano lessons dubai",
     "free trial dance class dubai",
   ],
-  authors: [{ name: "JazzRockers Academy" }],
+  authors: [{ name: "Jazzrockers Academy" }],
   icons: {
     icon: "/images/jazz-logo.webp",
   },
   openGraph: {
     title: "JazzRockers | Dance, Music, Gymnastics & Fine Arts Academy in Dubai",
     description:
-      "Discover your child's hidden talent with JazzRockers. 20+ programs, certified coaches, and international performance opportunities in Dubai.",
+      "Discover your child's hidden talent with Jazzrockers. 20+ programs, certified coaches, and international performance opportunities in Dubai.",
     url: "https://jazzrockers.ae",
     siteName: "JazzRockers Academy",
     images: [

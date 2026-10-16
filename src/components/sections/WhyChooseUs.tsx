@@ -175,7 +175,7 @@ export const WhyChooseUs: React.FC = () => {
                 type="button"
                 onClick={openBrochureModal}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-brand-primary hover:bg-brand-primary-hover text-white font-bold text-sm sm:text-base shadow-primary hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-primary group cursor-pointer select-none"
-                aria-label="Download JazzRockers Academy Brochure (PDF)"
+                aria-label="Download Jazzrockers Academy Brochure (PDF)"
               >
                 <Download className="w-5 h-5 transition-transform duration-200 group-hover:translate-y-0.5 shrink-0" />
                 <span>Download Brochure</span>

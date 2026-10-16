@@ -160,7 +160,7 @@ export const BrochureModal: React.FC = () => {
                     <div className="relative w-10 h-10 rounded-xl bg-white p-1 shrink-0 shadow-md">
                       <Image
                         src="/images/jazz-logo.webp"
-                        alt="JazzRockers Logo"
+                        alt="Jazzrockers Logo"
                         fill
                         className="object-contain"
                         sizes="40px"
