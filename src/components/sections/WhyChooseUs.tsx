@@ -180,7 +180,7 @@ export const WhyChooseUs: React.FC = () => {
                 <Download className="w-5 h-5 transition-transform duration-200 group-hover:translate-y-0.5 shrink-0" />
                 <span>Download Brochure</span>
                 <span className="text-[11px] font-semibold bg-black/20 px-2.5 py-0.5 rounded-full shrink-0">
-                  PDF • 630 KB
+                  PDF
                 </span>
               </button>
             </div>

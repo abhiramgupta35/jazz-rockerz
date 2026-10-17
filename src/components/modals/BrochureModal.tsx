@@ -411,7 +411,7 @@ export const BrochureModal: React.FC = () => {
                           className="inline-flex items-center gap-1.5 text-brand-primary hover:underline font-bold"
                         >
                           <Download className="w-3.5 h-3.5" />
-                          <span>Click here to download directly (PDF • 630 KB)</span>
+                          <span>Click here to download directly (PDF)</span>
                         </button>
                       </div>
 
