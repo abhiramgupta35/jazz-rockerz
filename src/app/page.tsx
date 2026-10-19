@@ -3,7 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { ProgramsSection } from "@/components/sections/ProgramsSection";
 import { Achievements } from "@/components/sections/Achievements";
-import { Testimonials } from "@/components/sections/Testimonials";
+import { Testimonials } from "@/components/Testimonials";
 import { GallerySection } from "@/components/sections/GallerySection";
 import { AdmissionCTA } from "@/components/sections/AdmissionCTA";
 
@@ -23,7 +23,7 @@ export default function HomePage() {
       <Achievements />
 
       {/* 5. What Parents & Students Say */}
-      <Testimonials />
+      <Testimonials placeId="ChIJNz8xenJcXz4RwzRlDLet-xI" />
 
       {/* 6. Life at JazzRockers */}
       <GallerySection />
