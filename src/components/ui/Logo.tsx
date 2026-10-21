@@ -35,8 +35,8 @@ export const Logo: React.FC<LogoProps> = ({
       </div>
 
       <div className="flex flex-col leading-none items-start justify-center pt-1">
-        <div className={`tracking-tight font-bold text-xl sm:text-3xl text-brand-secondary`}>
-          jazzrockers
+        <div className={`tracking-tight font-bold text-xl sm:text-3xl ${textColor}`}>
+          Jazzrockers
         </div>
         {showTagline && (
           <span className={`text-[7px] sm:text-[9px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-brand-primary mt-1.5 uppercase`}>

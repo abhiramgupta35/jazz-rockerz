@@ -101,7 +101,7 @@ export const SiteBackground: React.FC = () => {
 
       {/* Golden Amber Star (Top Left) */}
       <div className="absolute top-[10%] left-1.5 sm:left-3 md:left-[3%] text-amber-400 drop-shadow-[0_0_10px_rgba(251,191,36,0.7)] animate-star-glow">
-        <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="24" height="24" className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" />
         </svg>
       </div>
@@ -111,7 +111,7 @@ export const SiteBackground: React.FC = () => {
         className="absolute top-[14%] right-1.5 sm:right-3 md:right-[3.5%] text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.65)] animate-star-glow"
         style={{ animationDelay: "-1.5s" }}
       >
-        <svg className="w-5 h-5 sm:w-5.5 sm:h-5.5" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="24" height="24" className="w-5 h-5 sm:w-5.5 sm:h-5.5" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" />
         </svg>
       </div>
@@ -121,7 +121,7 @@ export const SiteBackground: React.FC = () => {
         className="absolute top-[36%] left-1.5 sm:left-2.5 md:left-[2.5%] text-[#FF2A54] drop-shadow-[0_0_10px_rgba(255,42,84,0.65)] animate-star-glow"
         style={{ animationDelay: "-2.8s" }}
       >
-        <svg className="w-4.5 h-4.5 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="24" height="24" className="w-4.5 h-4.5 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" />
         </svg>
       </div>
@@ -131,7 +131,7 @@ export const SiteBackground: React.FC = () => {
         className="absolute top-[42%] right-1.5 sm:right-2.5 md:right-[2.5%] text-[#3B82F6] drop-shadow-[0_0_10px_rgba(59,130,246,0.65)] animate-star-glow"
         style={{ animationDelay: "-0.8s" }}
       >
-        <svg className="w-5.5 h-5.5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="24" height="24" className="w-5.5 h-5.5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" />
         </svg>
       </div>
@@ -141,7 +141,7 @@ export const SiteBackground: React.FC = () => {
         className="absolute top-[66%] left-1.5 sm:left-3 md:left-[3.5%] text-purple-500 drop-shadow-[0_0_10px_rgba(168,85,247,0.65)] animate-star-glow"
         style={{ animationDelay: "-2.2s" }}
       >
-        <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="24" height="24" className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" />
         </svg>
       </div>
@@ -151,7 +151,7 @@ export const SiteBackground: React.FC = () => {
         className="absolute top-[72%] right-1.5 sm:right-3.5 md:right-[4%] text-pink-500 drop-shadow-[0_0_10px_rgba(236,72,153,0.65)] animate-star-glow"
         style={{ animationDelay: "-1.8s" }}
       >
-        <svg className="w-5 h-5 sm:w-5.5 sm:h-5.5" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="24" height="24" className="w-5 h-5 sm:w-5.5 sm:h-5.5" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" />
         </svg>
       </div>
@@ -161,7 +161,7 @@ export const SiteBackground: React.FC = () => {
         className="absolute top-[88%] left-1.5 sm:left-4 md:left-[4.5%] text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.65)] animate-star-glow"
         style={{ animationDelay: "-3.2s" }}
       >
-        <svg className="w-4.5 h-4.5 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="24" height="24" className="w-4.5 h-4.5 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" />
         </svg>
       </div>
@@ -171,7 +171,7 @@ export const SiteBackground: React.FC = () => {
         className="absolute top-[92%] right-1.5 sm:right-4 md:right-[3.5%] text-orange-400 drop-shadow-[0_0_10px_rgba(251,146,60,0.65)] animate-star-glow"
         style={{ animationDelay: "-1.1s" }}
       >
-        <svg className="w-4.5 h-4.5 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="24" height="24" className="w-4.5 h-4.5 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" />
         </svg>
       </div>
@@ -180,7 +180,7 @@ export const SiteBackground: React.FC = () => {
 
       {/* Floating Beamed Music Notes (♫) in Violet - Near Hero / Why Choose Us */}
       <div className="absolute top-[22%] left-1 sm:left-3 md:left-[4.5%] text-indigo-500/85 drop-shadow-[0_0_8px_rgba(99,102,241,0.55)] animate-float-gentle">
-        <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="24" height="24" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 3v9.28a4.39 4.39 0 0 0-1.5-.28C8.01 12 6 14.01 6 16.5S8.01 21 10.5 21c2.31 0 4.2-1.75 4.45-4H15V6h4V3h-7z" />
         </svg>
       </div>
@@ -190,7 +190,7 @@ export const SiteBackground: React.FC = () => {
         className="absolute top-[26%] right-1 sm:right-3 md:right-[4%] text-amber-500/85 drop-shadow-[0_0_8px_rgba(245,158,11,0.55)] animate-float-reverse"
         style={{ animationDelay: "-2s" }}
       >
-        <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="24" height="24" className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
         </svg>
       </div>
@@ -200,7 +200,7 @@ export const SiteBackground: React.FC = () => {
         className="absolute top-[50%] left-1 sm:left-3 md:left-[4%] text-[#FF5722]/75 animate-float-gentle"
         style={{ animationDelay: "-3.5s" }}
       >
-        <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none">
+        <svg width="24" height="24" className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none">
           <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2.2" strokeDasharray="3 3" />
           <circle cx="12" cy="12" r="3" fill="currentColor" />
         </svg>
@@ -211,7 +211,7 @@ export const SiteBackground: React.FC = () => {
         className="absolute top-[56%] right-1 sm:right-3 md:right-[3.5%] text-emerald-500/85 drop-shadow-[0_0_8px_rgba(16,185,129,0.55)] animate-float-reverse"
         style={{ animationDelay: "-1.2s" }}
       >
-        <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="24" height="24" className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
         </svg>
       </div>
@@ -221,7 +221,7 @@ export const SiteBackground: React.FC = () => {
         className="absolute top-[80%] left-1 sm:left-2.5 md:left-[3%] text-pink-500/85 drop-shadow-[0_0_8px_rgba(236,72,153,0.55)] animate-float-gentle"
         style={{ animationDelay: "-4s" }}
       >
-        <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="24" height="24" className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
           <circle cx="12" cy="12" r="3.5" />
           <path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2.2 2.2M16.8 16.8l2.2 2.2M5 19l2.2-2.2M16.8 7.2l2.2-2.2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
@@ -232,7 +232,7 @@ export const SiteBackground: React.FC = () => {
         className="absolute top-[84%] right-1 sm:right-2.5 md:right-[3%] text-cyan-500/85 drop-shadow-[0_0_8px_rgba(6,182,212,0.55)] animate-float-reverse"
         style={{ animationDelay: "-2.5s" }}
       >
-        <svg className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="24" height="24" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 3v9.28a4.39 4.39 0 0 0-1.5-.28C8.01 12 6 14.01 6 16.5S8.01 21 10.5 21c2.31 0 4.2-1.75 4.45-4H15V6h4V3h-7z" />
         </svg>
       </div>

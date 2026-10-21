@@ -32,7 +32,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     return (
       <>
         {parts[0]}
-        <span className="text-brand-primary underline decoration-red- decoration-wavy decoration-2 underline-offset-8">
+        <span className="text-brand-primary underline decoration-red- decoration-wavy decoration-2 underline-offset-8 normal-case">
           {highlightWord}
         </span>
         {parts[1]}

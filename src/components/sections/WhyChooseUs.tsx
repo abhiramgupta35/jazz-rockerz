@@ -81,8 +81,8 @@ export const WhyChooseUs: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="Why Jazzrockers"
-          title="WHY PARENTS CHOOSE JAZZROCKERS"
-          highlightWord="JAZZROCKERS"
+          title="WHY PARENTS CHOOSE Jazzrockers"
+          highlightWord="Jazzrockers"
           subtitle="Empowering the next generation with world-class performing arts instruction, confidence, and limitless imagination."
         />
 
@@ -158,13 +158,13 @@ export const WhyChooseUs: React.FC = () => {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                   </span>
-                  <span>Official Academy Prospectus • 2025–26</span>
+                  <span>Jazzrockers Course Guide</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white leading-tight">
-                  Want Full Curriculum, Schedules & Fee Details?
+                 Explore Our Courses & Fee Guide
                 </h3>
                 <p className="mt-1.5 text-xs sm:text-sm text-gray-200/90 leading-relaxed max-w-xl">
-                  Download our complete school brochure for detailed course levels, age groups, batch timings, and campus locations across Dubai.
+                  Download our course guide to explore our programmes, what you'll learn, class frequency, fees and more.
                 </p>
               </div>
             </div>

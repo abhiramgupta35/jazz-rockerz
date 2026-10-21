@@ -167,8 +167,8 @@ export const BrochureModal: React.FC = () => {
                       />
                     </div>
                     <div className="flex flex-col leading-none">
-                      <span className="text-xl font-black tracking-tight text-white uppercase">
-                        JazzRockers
+                      <span className="text-xl font-black tracking-tight text-white">
+                        Jazzrockers
                       </span>
                       <span className="text-[8px] font-bold tracking-widest text-brand-primary-light uppercase mt-1">
                         Performing Arts Academy
@@ -397,7 +397,7 @@ export const BrochureModal: React.FC = () => {
                           Thank You, {name}!
                         </h3>
                         <p className="mt-2 text-sm text-gray-600 max-w-sm mx-auto leading-relaxed">
-                          Your official JazzRockers Academy Brochure download has started.
+                          Your official Jazzrockers Academy Brochure download has started.
                         </p>
                       </div>
 

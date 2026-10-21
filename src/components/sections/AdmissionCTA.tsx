@@ -59,7 +59,7 @@ export const AdmissionCTA: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 3v5h5" />
               </svg>
-              <span className="text-[11px] sm:text-[13px] lg:text-[15px] font-bold leading-tight">Easy<br/>Reg.</span>
+              <span className="text-[11px] sm:text-[13px] lg:text-[15px] font-bold leading-tight">Easy<br/>Registration</span>
             </div>
 
             <div className="hidden lg:block w-px h-16 bg-white/25 mt-2"></div>

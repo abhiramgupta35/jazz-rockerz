@@ -40,8 +40,8 @@ export const GallerySection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="Moments of Magic"
-          title="LIFE AT JAZZROCKERS"
-          highlightWord="JAZZROCKERS"
+          title="LIFE AT Jazzrockers"
+          highlightWord="Jazzrockers"
           subtitle="A glimpse into the energy, artistry, friendships, and triumphs that unfold in our Dubai studios."
         />
 

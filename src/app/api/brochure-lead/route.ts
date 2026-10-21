@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     // TODO: Connect to client email service (e.g., Resend, Nodemailer, SendGrid, or CRM webhook)
     // Example:
     // await sendEmail({
-    //   to: process.env.ADMIN_EMAIL || "info@jazzrockers.com",
+    //   to: process.env.ADMIN_EMAIL || "contact@jazzrockers.com",
     //   subject: `New Brochure Download Request: ${leadPayload.name}`,
     //   text: `Name: ${leadPayload.name}\nAge: ${leadPayload.age}\nPhone: ${leadPayload.phone}`,
     // });
