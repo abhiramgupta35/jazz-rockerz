@@ -70,7 +70,7 @@ export const PROGRAMS: ProgramItem[] = [
     tagline: "Agility, strength, flexibility, and fearlessness",
     description:
       "Taught by certified international coaches in safety-padded professional facilities. Our progressive gymnastics curriculum builds explosive core power, balance, aerial awareness, and Olympic-standard discipline.",
-    heroImage: "/images/gymnastics.jpg",
+    heroImage: "/images/programs-gymnastics.webp",
     subPrograms: [
       "Flexibility Training",
     ],
@@ -97,7 +97,7 @@ export const PROGRAMS: ProgramItem[] = [
     tagline: "Colors, imagination, visual mastery, and creative freedom",
     description:
       "Fuel your child's imagination through hands-on creative experimentation. From classic sketching and watercolor to vibrant acrylics, craft innovations, and digital tablet illustration, young artists find their visual voice.",
-    heroImage: "/images/theatre-kids.webp",
+    heroImage: "/images/programs-fine-arts.webp",
     subPrograms: [
       "Drawing",
       "Painting",
