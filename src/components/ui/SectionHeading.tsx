@@ -32,7 +32,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     return (
       <>
         {parts[0]}
-        <span className="text-brand-primary underline decoration-red- decoration-wavy decoration-2 underline-offset-8 normal-case">
+        <span className="text-brand-primary underline decoration-red-300 decoration-wavy decoration-2 underline-offset-8 normal-case">
           {highlightWord}
         </span>
         {parts[1]}
@@ -49,7 +49,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       className={`max-w-3xl ${centered ? "mx-auto text-center" : ""} ${className}`}
     >
       {badge && (
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-red-/80 text-brand-primary mb-3 border border-red-/60 shadow-sm">
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wide bg-red-50 text-brand-primary mb-3 border border-red-100 shadow-sm">
           <span className="w-1.5 h-1.5 rounded-full bg-brand-primary animate-ping" />
           {badge}
         </span>

@@ -9,7 +9,8 @@ export type AnalyticsEvent =
   | "whatsapp_click"
   | "read_reviews_click"
   | "branch_select"
-  | "program_view";
+  | "program_view"
+  | "brochure_open";
 
 export interface UtmParams {
   utm_source?: string;

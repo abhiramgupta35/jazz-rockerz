@@ -1,37 +1,20 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Check, X, Calendar, Users, Star, Target } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, Check } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { PROGRAMS } from "@/lib/data/programs";
 import { trackEvent } from "@/lib/analytics";
 import { useModal } from "@/context/ModalContext";
 
 export const ProgramsSection: React.FC = () => {
-  const [selectedProgram, setSelectedProgram] = useState<typeof PROGRAMS[0] | null>(null);
-  const { openModal } = useModal();
-
-  useEffect(() => {
-    if (selectedProgram) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [selectedProgram]);
+  const { openBrochureModal } = useModal();
 
   const handleLearnMore = (program: typeof PROGRAMS[0]) => {
-    trackEvent("program_view", { program: program.slug });
-    setSelectedProgram(program);
-  };
-
-  const handleBookTrial = () => {
-    setSelectedProgram(null);
-    openModal();
+    trackEvent("brochure_open", { source: "programs_section", program: program.slug });
+    openBrochureModal();
   };
 
   return (
@@ -118,131 +101,6 @@ export const ProgramsSection: React.FC = () => {
           ))}
         </div>
       </div>
-
-      {/* Program Detailed Modal */}
-      <AnimatePresence>
-        {selectedProgram && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.3 }}
-              className="bg-white rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative scrollbar-hide"
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setSelectedProgram(null)}
-                className="absolute top-4 right-4 z-20 w-10 h-10 bg-black/40 hover:bg-black/60 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              {/* Modal Header Image */}
-              <div className="relative h-64 sm:h-80 w-full bg-gray-900 overflow-hidden">
-                <Image
-                  src={selectedProgram.heroImage}
-                  alt={selectedProgram.name}
-                  fill
-                  className="object-cover object-center opacity-80"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight mb-2" style={{ color: selectedProgram.accentColor || '#E31E24' }}>
-                    {selectedProgram.name}
-                  </h2>
-                  <p className="text-lg sm:text-xl font-medium text-gray-200">
-                    {selectedProgram.tagline}
-                  </p>
-                </div>
-              </div>
-
-              {/* Modal Body */}
-              <div className="p-6 sm:p-10">
-                <p className="text-gray-600 text-lg leading-relaxed mb-10">
-                  {selectedProgram.description}
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                  {/* Highlights/Features */}
-                  <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Star className="w-6 h-6 text-[#E31E24]" />
-                      <h4 className="text-lg font-bold text-gray-900">Program Highlights</h4>
-                    </div>
-                    <ul className="space-y-3">
-                      {selectedProgram.features.map((feature, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <Check className="w-5 h-5 text-[#E31E24] shrink-0 mt-0.5" />
-                          <span className="text-gray-700">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Benefits */}
-                  <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Target className="w-6 h-6 text-[#E31E24]" />
-                      <h4 className="text-lg font-bold text-gray-900">Key Benefits</h4>
-                    </div>
-                    <ul className="space-y-3">
-                      {selectedProgram.benefits.map((benefit, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <Check className="w-5 h-5 text-[#E31E24] shrink-0 mt-0.5" />
-                          <span className="text-gray-700">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                  {/* Age Groups */}
-                  <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <Users className="w-6 h-6 text-[#E31E24]" />
-                      <h4 className="text-lg font-bold text-gray-900">Age Groups</h4>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProgram.ageGroups.map((age, i) => (
-                        <span key={i} className="px-4 py-2 bg-primary-50 text-[#E31E24] rounded-full text-sm font-semibold border border-red-">
-                          {age}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Schedule */}
-                  <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <Calendar className="w-6 h-6 text-[#E31E24]" />
-                      <h4 className="text-lg font-bold text-gray-900">Schedule</h4>
-                    </div>
-                    <p className="text-gray-700 font-medium">
-                      {selectedProgram.schedule}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Footer CTA */}
-                <div className="mt-8 pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 items-center justify-between">
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-1">Ready to get started?</h4>
-                    <p className="text-sm text-gray-500">Secure your spot in our upcoming batches today.</p>
-                  </div>
-                  <button
-                    onClick={handleBookTrial}
-                    className="w-full sm:w-auto bg-[#E31E24] hover:bg-red- text-white px-8 py-4 rounded-full font-bold tracking-wide transition-all duration-300 shadow-lg shadow-primary-200 transform hover:-translate-y-1"
-                  >
-                    BOOK A FREE TRIAL
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };

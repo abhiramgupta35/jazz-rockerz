@@ -12,6 +12,7 @@ import {
   ChevronLeft,
   Loader2,
   Sparkles,
+  AlertCircle,
 } from "lucide-react";
 import Image from "next/image";
 import { useModal } from "@/context/ModalContext";
@@ -22,6 +23,7 @@ export const BrochureModal: React.FC = () => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
   const [errors, setErrors] = useState<{
     name?: string;
@@ -29,6 +31,7 @@ export const BrochureModal: React.FC = () => {
     phone?: string;
   }>({});
 
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -47,6 +50,7 @@ export const BrochureModal: React.FC = () => {
       setTimeout(() => {
         setIsSuccess(false);
         setErrors({});
+        setSubmitError(null);
       }, 300);
     }
 
@@ -90,28 +94,46 @@ export const BrochureModal: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (isSubmitting) return;
+
     if (!validate()) return;
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
     try {
-      // Send lead to server API (ready to connect to client email service)
-      await fetch("/api/brochure-lead", {
+      const response = await fetch("/api/brochure", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: name.trim(),
           age: age.trim(),
           phone: `+971 ${phoneNumber.trim()}`,
+          website_hp: honeypot,
         }),
       });
-    } catch (err) {
-      console.warn("Failed to log lead, proceeding with download:", err);
-    } finally {
+
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok) {
+        const errorMsg =
+          result?.error ||
+          "Unable to send brochure enquiry. Please try again or contact us directly.";
+        setSubmitError(errorMsg);
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Success case: show confirmation and trigger instant download
       setIsSubmitting(false);
       setIsSuccess(true);
-      // Trigger instant brochure download
       triggerDownload();
+    } catch (err) {
+      console.error("Brochure submission error:", err);
+      setSubmitError(
+        "Network connection issue. Please check your internet and try again."
+      );
+      setIsSubmitting(false);
     }
   };
 
@@ -265,6 +287,7 @@ export const BrochureModal: React.FC = () => {
                                 if (errors.name) {
                                   setErrors((prev) => ({ ...prev, name: undefined }));
                                 }
+                                if (submitError) setSubmitError(null);
                               }}
                               placeholder="Name"
                               className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-gray-900 placeholder-gray-400 transition-all focus:outline-none focus:ring-2 ${errors.name
@@ -301,6 +324,7 @@ export const BrochureModal: React.FC = () => {
                                 if (errors.age) {
                                   setErrors((prev) => ({ ...prev, age: undefined }));
                                 }
+                                if (submitError) setSubmitError(null);
                               }}
                               placeholder="e.g. 5–7 yrs, 8–12 yrs, Adult"
                               className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm text-gray-900 placeholder-gray-400 transition-all focus:outline-none focus:ring-2 ${errors.age
@@ -345,6 +369,7 @@ export const BrochureModal: React.FC = () => {
                                   if (errors.phone) {
                                     setErrors((prev) => ({ ...prev, phone: undefined }));
                                   }
+                                  if (submitError) setSubmitError(null);
                                 }}
                                 placeholder="Phone Number (e.g. 50 123 4567)"
                                 className="w-full pl-9 pr-4 py-3 bg-transparent text-sm text-gray-900 placeholder-gray-400 focus:outline-none"
@@ -357,6 +382,34 @@ export const BrochureModal: React.FC = () => {
                             </p>
                           )}
                         </div>
+
+                        {/* Honeypot Spam Protection (Hidden from legitimate users) */}
+                        <div
+                          className="hidden"
+                          aria-hidden="true"
+                          style={{ display: "none" }}
+                        >
+                          <label htmlFor="brochure-hp">Website</label>
+                          <input
+                            id="brochure-hp"
+                            type="text"
+                            tabIndex={-1}
+                            autoComplete="off"
+                            value={honeypot}
+                            onChange={(e) => setHoneypot(e.target.value)}
+                          />
+                        </div>
+
+                        {/* Server/Submission Error Message */}
+                        {submitError && (
+                          <div
+                            role="alert"
+                            className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs leading-relaxed flex items-start gap-2.5"
+                          >
+                            <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                            <span>{submitError}</span>
+                          </div>
+                        )}
 
                         {/* Submit Button */}
                         <div className="pt-2">
