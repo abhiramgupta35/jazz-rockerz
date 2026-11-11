@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-3 space-y-6">
             <Logo variant="light" />
             <p className="text-gray-300 text-[15px] leading-relaxed max-w-[280px]">
-              Nurturing talent, building confidence and creating tomorrow's performers since 2012.
+              Nurturing talent, building confidence and creating tomorrow's performers since 2010.
             </p>
             <div className="flex items-center gap-3">
               <a href="https://www.facebook.com/jazzrockers/" aria-label="Facebook" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors">
