@@ -26,9 +26,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-plus-jakarta)", "sans-serif"],
-        display: ["var(--font-outfit)", "sans-serif"],
-        body: ["var(--font-plus-jakarta)", "sans-serif"],
+        sans: ["var(--font-barlow)", "system-ui", "-apple-system", "sans-serif"],
+        display: ["var(--font-barlow)", "system-ui", "-apple-system", "sans-serif"],
+        body: ["var(--font-barlow)", "system-ui", "-apple-system", "sans-serif"],
       },
       boxShadow: {
         card: "0 10px 30px -5px rgba(43, 53, 130, 0.08)",

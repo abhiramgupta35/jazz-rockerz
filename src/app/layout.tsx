@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import { Barlow } from "next/font/google";
 import "./globals.css";
 import { SiteBackground } from "@/components/layout/SiteBackground";
 import { Header } from "@/components/layout/Header";
@@ -10,17 +10,10 @@ import { BrochureModal } from "@/components/modals/BrochureModal";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { ModalProvider } from "@/context/ModalContext";
 
-const outfit = Outfit({
+const barlow = Barlow({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-outfit",
-  display: "swap",
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-plus-jakarta",
+  variable: "--font-barlow",
   display: "swap",
 });
 
@@ -83,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
+    <html lang="en" className={barlow.variable} suppressHydrationWarning>
       <body className="font-sans antialiased min-h-screen text-brand-dark selection:bg-brand-primary selection:text-white relative bg-[#FBFBFE]" suppressHydrationWarning>
         <SiteBackground />
         <ModalProvider>

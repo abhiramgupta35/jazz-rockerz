@@ -19,6 +19,12 @@ export interface WhatsAppBookingPayload {
   notes?: string;
 }
 
+export interface BrochureLeadPayload {
+  name: string;
+  age: string;
+  phoneNumber: string;
+}
+
 export interface WhatsAppModalOptions {
   title?: string;
   subtitle?: string;
@@ -89,6 +95,23 @@ export function formatTrialBookingMessage(data: WhatsAppBookingPayload): string 
 
   lines.push("");
   lines.push("Hello Jazzrockers Team, I have just submitted my free trial class registration on your website. Kindly confirm the available slots and next steps!");
+
+  return lines.join("\n");
+}
+
+/**
+ * Formats brochure download lead into a professional WhatsApp enquiry message
+ */
+export function formatBrochureLeadMessage(data: BrochureLeadPayload): string {
+  const lines: string[] = [
+    "📄 *NEW PROGRAM BROCHURE DOWNLOAD — Jazzrockers Academy* 📄",
+    "",
+    `👤 *Name:* ${data.name.trim()}`,
+    `🎂 *Student's Age:* ${data.age.trim()}`,
+    `📱 *Phone / WhatsApp:* ${data.phoneNumber.trim()}`,
+    "",
+    "Hello Jazzrockers Team, I have just downloaded your program brochure from the website. Kindly share additional details regarding course schedules, fee packages, and trial class slots!",
+  ];
 
   return lines.join("\n");
 }

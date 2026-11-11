@@ -137,11 +137,12 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Col 5: Map Iframe */}
-          <div className="lg:col-span-3 h-[250px] lg:h-full min-h-[250px] rounded-2xl overflow-hidden mt-4 lg:mt-0 flex flex-col items-center">
+          {/* Col 5: Map Iframe (Dark Theme) */}
+          <div className="lg:col-span-3 h-[250px] lg:h-full min-h-[250px] w-full rounded-2xl overflow-hidden mt-6 lg:mt-0 bg-[#1c1c1c] border border-gray-800 shadow-inner relative group">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29581230.299563926!2d16.384959099999985!3d25.1698146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f61b90587e5a3%3A0xcacb4b3f2a3dd431!2sjazzrockers%20-%20International%20City%20Branch%20(Music%2FDance%2FFitness%2FFine%20Arts%20Classes)!5e0!3m2!1sen!2sin!4v1789897738501!5m2!1sen!2sin" 
-              className="w-full h-full border-0 min-h-[250px]" 
+              title="Jazzrockers Performing Arts Academy Dubai Location Map"
+              className="w-full h-full border-0 min-h-[250px] filter invert-[90%] hue-rotate-180 contrast-[95%] grayscale-[15%] transition-opacity duration-300" 
               allowFullScreen={false} 
               loading="lazy" 
               referrerPolicy="strict-origin-when-cross-origin"

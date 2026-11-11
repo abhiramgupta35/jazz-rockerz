@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Star, ExternalLink, CheckCircle2 } from "lucide-react";
+import { Star, ExternalLink, CheckCircle2, ChevronRight } from "lucide-react";
 import { getPlaceReviews, GoogleReview } from "@/lib/google-reviews";
 
 interface TestimonialsProps {
@@ -91,97 +91,110 @@ export async function Testimonials({
           </div>
         </div>
 
-        {/* Reviews Grid */}
+        {/* Reviews Track: Horizontal Swipeable Carousel on Mobile, Grid on Desktop */}
         {reviews && reviews.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reviews.map((review: GoogleReview, idx: number) => {
-              const author = review.authorAttribution;
-              const reviewText =
-                review.text?.text || review.originalText?.text || "";
+          <div>
+            <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible pb-4 pt-1 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory scrollbar-none scroll-smooth">
+              {reviews.map((review: GoogleReview, idx: number) => {
+                const author = review.authorAttribution;
+                const reviewText =
+                  review.text?.text || review.originalText?.text || "";
 
-              return (
-                <article
-                  key={review.name || idx}
-                  className="bg-white rounded-[1.25rem] p-6 border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow duration-200"
-                >
-                  <div>
-                    {/* Rating & Relative Time */}
-                    <div className="flex items-center justify-between gap-2 mb-4">
-                      <div className="flex items-center gap-1 text-amber-400">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <Star
-                            key={star}
-                            className={`w-[16px] h-[16px] ${
-                              star <= (review.rating || 5)
-                                ? "fill-current text-amber-400"
-                                : "text-gray-200 fill-current"
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      {review.relativePublishTimeDescription && (
-                        <span className="text-xs text-gray-400 font-medium">
-                          {review.relativePublishTimeDescription}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Review Body */}
-                    <p className="text-[#1f2937] text-[15px] font-normal leading-[1.65] line-clamp-6">
-                      &ldquo;{reviewText}&rdquo;
-                    </p>
-                  </div>
-
-                  {/* Author Attribution Footer */}
-                  <div className="flex items-center gap-3.5 mt-6 pt-4 border-t border-gray-100">
-                    <div className="relative w-11 h-11 flex-shrink-0">
-                      {author?.photoUri ? (
-                        <Image
-                          src={author.photoUri}
-                          alt={author.displayName || "Google Reviewer"}
-                          width={44}
-                          height={44}
-                          referrerPolicy="no-referrer"
-                          className="rounded-full w-11 h-11 object-cover border border-gray-100"
-                        />
-                      ) : (
-                        <div className="w-11 h-11 rounded-full bg-red-100 text-[#E31E24] font-bold flex items-center justify-center text-sm">
-                          {(author?.displayName || "G").charAt(0).toUpperCase()}
+                return (
+                  <article
+                    key={review.name || idx}
+                    className="w-[85vw] max-w-[340px] sm:w-[360px] md:w-auto shrink-0 snap-center bg-white rounded-2xl p-5 sm:p-6 border border-gray-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow duration-200"
+                  >
+                    <div>
+                      {/* Rating & Relative Time */}
+                      <div className="flex items-center justify-between gap-2 mb-3 sm:mb-4">
+                        <div className="flex items-center gap-1 text-amber-400">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <Star
+                              key={star}
+                              className={`w-[15px] h-[15px] sm:w-[16px] sm:h-[16px] ${
+                                star <= (review.rating || 5)
+                                  ? "fill-current text-amber-400"
+                                  : "text-gray-200 fill-current"
+                              }`}
+                            />
+                          ))}
                         </div>
-                      )}
+                        {review.relativePublishTimeDescription && (
+                          <span className="text-xs text-gray-400 font-medium">
+                            {review.relativePublishTimeDescription}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Review Body */}
+                      <p className="text-[#1f2937] text-sm sm:text-[15px] font-normal leading-[1.65] line-clamp-4 sm:line-clamp-6">
+                        &ldquo;{reviewText}&rdquo;
+                      </p>
                     </div>
 
-                    <div className="min-w-0 flex-1">
-                      {author?.uri ? (
-                        <a
-                          href={author.uri}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-bold text-gray-900 text-[15px] leading-tight block truncate hover:text-[#E31E24] transition-colors"
-                          title={author.displayName}
-                        >
-                          {author.displayName}
-                        </a>
-                      ) : (
-                        <span className="font-bold text-gray-900 text-[15px] leading-tight block truncate">
-                          {author?.displayName || "Google Reviewer"}
-                        </span>
-                      )}
-                      <div className="flex items-center gap-1.5 text-gray-500 text-[12px] mt-0.5">
-                        <Image
-                          src="/images/google.png"
-                          alt="Google"
-                          width={14}
-                          height={14}
-                          className="w-3.5 h-3.5 object-contain"
-                        />
-                        <span>Google Review</span>
+                    {/* Author Attribution Footer */}
+                    <div className="flex items-center gap-3.5 mt-5 sm:mt-6 pt-3.5 sm:pt-4 border-t border-gray-100">
+                      <div className="relative w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0">
+                        {author?.photoUri ? (
+                          <Image
+                            src={author.photoUri}
+                            alt={author.displayName || "Google Reviewer"}
+                            width={44}
+                            height={44}
+                            referrerPolicy="no-referrer"
+                            className="rounded-full w-10 h-10 sm:w-11 sm:h-11 object-cover border border-gray-100"
+                          />
+                        ) : (
+                          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-red-100 text-[#E31E24] font-bold flex items-center justify-center text-sm">
+                            {(author?.displayName || "G").charAt(0).toUpperCase()}
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="min-w-0 flex-1">
+                        {author?.uri ? (
+                          <a
+                            href={author.uri}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-bold text-gray-900 text-sm sm:text-[15px] leading-tight block truncate hover:text-[#E31E24] transition-colors"
+                            title={author.displayName}
+                          >
+                            {author.displayName}
+                          </a>
+                        ) : (
+                          <span className="font-bold text-gray-900 text-sm sm:text-[15px] leading-tight block truncate">
+                            {author?.displayName || "Google Reviewer"}
+                          </span>
+                        )}
+                        <div className="flex items-center gap-1.5 text-gray-500 text-[11px] sm:text-[12px] mt-0.5">
+                          <Image
+                            src="/images/google.png"
+                            alt="Google"
+                            width={14}
+                            height={14}
+                            className="w-3.5 h-3.5 object-contain"
+                          />
+                          <span>Google Review</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-              );
-            })}
+                  </article>
+                );
+              })}
+            </div>
+
+            {/* Mobile Swipe Indicators */}
+            <div className="flex md:hidden items-center justify-between pt-1 px-1 text-xs text-gray-400 font-medium">
+              <span className="inline-flex items-center gap-1 text-gray-500 font-semibold text-xs">
+                <span>Swipe stories</span>
+                <ChevronRight className="w-3.5 h-3.5 text-brand-primary animate-pulse" />
+              </span>
+              <span className="text-[11px] text-gray-500 bg-gray-100 px-2.5 py-0.5 rounded-full font-semibold">
+                {reviews.length} Verified Reviews
+              </span>
+            </div>
           </div>
         ) : (
           <div className="text-center py-12 bg-white rounded-2xl border border-gray-100">

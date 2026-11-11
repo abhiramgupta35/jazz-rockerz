@@ -98,7 +98,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // 3. Verify Server-Side Resend Configuration
+    // 3. Optional Email Dispatch (Non-blocking: lead is primarily forwarded to WhatsApp)
     const resendApiKey = process.env.RESEND_API_KEY;
     const clientEmail = process.env.CLIENT_EMAIL;
     const resendFromEmail =
@@ -106,46 +106,18 @@ export async function POST(request: Request) {
       "Jazzrockers Website <website@resend.dev>";
 
     if (
-      !resendApiKey ||
-      resendApiKey === "re_your_actual_api_key" ||
-      resendApiKey.trim() === ""
+      resendApiKey &&
+      resendApiKey !== "re_your_actual_api_key" &&
+      clientEmail &&
+      !clientEmail.includes("example.com")
     ) {
-      console.error(
-        "[BROCHURE API ERROR]: RESEND_API_KEY is not configured or still has placeholder value in environment variables."
-      );
-      return NextResponse.json(
-        {
-          error:
-            "Email service is not yet configured. Please set a valid RESEND_API_KEY in your server environment variables.",
-        },
-        { status: 503 }
-      );
-    }
+      try {
+        const resend = new Resend(resendApiKey);
 
-    if (
-      !clientEmail ||
-      clientEmail.includes("example.com") ||
-      clientEmail.trim() === ""
-    ) {
-      console.error(
-        "[BROCHURE API ERROR]: CLIENT_EMAIL is not configured or still has placeholder value in environment variables."
-      );
-      return NextResponse.json(
-        {
-          error:
-            "Recipient email is not configured. Please set CLIENT_EMAIL in your server environment variables.",
-        },
-        { status: 503 }
-      );
-    }
+        const emailSubject = "New Brochure Download Enquiry — Jazzrockers";
+        const plainTextBody = `Jazzrockers Performing Arts Academy\nA new visitor has requested the program brochure.\n\nStudent Name: ${trimmedName}\nStudent Age: ${trimmedAge}\nPhone Number: ${trimmedPhone}\nSource: Get Your Program Brochure Modal`;
 
-    // 4. Send Email via Resend SDK
-    const resend = new Resend(resendApiKey);
-
-    const emailSubject = "New Brochure Download Enquiry — Jazzrockers";
-    const plainTextBody = `Jazzrockers Performing Arts Academy\nA new visitor has requested the program brochure.\n\nStudent Name: ${trimmedName}\nStudent Age: ${trimmedAge}\nPhone Number: ${trimmedPhone}\nSource: Get Your Program Brochure Modal`;
-
-    const htmlBody = `
+        const htmlBody = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -196,34 +168,23 @@ export async function POST(request: Request) {
   </div>
 </body>
 </html>
-    `.trim();
+        `.trim();
 
-    const { data, error } = await resend.emails.send({
-      from: resendFromEmail,
-      to: clientEmail,
-      subject: emailSubject,
-      text: plainTextBody,
-      html: htmlBody,
-    });
-
-    if (error) {
-      console.error("[RESEND DELIVERY ERROR]:", error);
-      return NextResponse.json(
-        {
-          error:
-            error.message ||
-            "Failed to send email notification. Please check Resend configuration.",
-        },
-        { status: 502 }
-      );
+        await resend.emails.send({
+          from: resendFromEmail,
+          to: clientEmail,
+          subject: emailSubject,
+          text: plainTextBody,
+          html: htmlBody,
+        });
+      } catch (emailErr) {
+        console.warn("[BROCHURE EMAIL ATTEMPT SKIPPED]:", emailErr);
+      }
     }
-
-    console.log("[BROCHURE ENQUIRY EMAIL SENT]: Resend ID:", data?.id);
 
     return NextResponse.json({
       success: true,
-      message: "Enquiry submitted and notification email dispatched.",
-      id: data?.id,
+      message: "Brochure lead processed and forwarded to WhatsApp.",
     });
   } catch (err: unknown) {
     console.error("[BROCHURE ROUTE UNHANDLED ERROR]:", err);
