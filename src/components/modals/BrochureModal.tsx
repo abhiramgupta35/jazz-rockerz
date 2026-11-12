@@ -226,7 +226,7 @@ export const BrochureModal: React.FC = () => {
                     <div className="relative w-10 h-10 rounded-xl bg-white p-1 shrink-0 shadow-md">
                       <Image
                         src="/images/jazz-logo.webp"
-                        alt="Jazzrockers Logo"
+                        alt="jazzrockers Logo"
                         fill
                         className="object-contain"
                         sizes="40px"
@@ -234,7 +234,7 @@ export const BrochureModal: React.FC = () => {
                     </div>
                     <div className="flex flex-col leading-none">
                       <span className="text-xl font-black tracking-tight text-white">
-                        Jazzrockers
+                        jazzrockers
                       </span>
                       <span className="text-[8px] font-bold tracking-widest text-brand-primary-light uppercase mt-1">
                         Performing Arts Academy

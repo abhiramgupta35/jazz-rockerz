@@ -18,14 +18,14 @@ export const Logo: React.FC<LogoProps> = ({
     <Link
       href="/"
       className={`group inline-flex items-center select-none focus:outline-none focus:ring-2 focus:ring-brand-primary rounded-xl transition-opacity hover:opacity-95 ${className}`}
-      aria-label="Jazzrockers Academy Home"
+      aria-label="jazzrockers Academy Home"
     >
       {isLight ? (
         // Footer Logo: JAZZROCKERS-LOGO
         <div className="relative">
           <Image
             src="/images/JAZZROCKERS-LOGO.png"
-            alt="Jazzrockers Performing Arts Academy"
+            alt="jazzrockers Performing Arts Academy"
             width={190}
             height={141}
             className="w-36 sm:w-44 h-auto object-contain"
@@ -37,7 +37,7 @@ export const Logo: React.FC<LogoProps> = ({
         <div className="relative">
           <Image
             src="/images/JazzRockerzWeb.png"
-            alt="Jazzrockers Performing Arts Academy"
+            alt="jazzrockers Performing Arts Academy"
             width={210}
             height={51}
             priority

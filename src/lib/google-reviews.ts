@@ -33,7 +33,7 @@ export const DEFAULT_FALLBACK_REVIEWS: GoogleReview[] = [
     relativePublishTimeDescription: "a month ago",
     rating: 5,
     text: {
-      text: "Jazzrockers has transformed my daughter. She joined with zero stage experience and is now performing in major recitals with immense confidence. The trainers are patient and world-class!",
+      text: "jazzrockers has transformed my daughter. She joined with zero stage experience and is now performing in major recitals with immense confidence. The trainers are patient and world-class!",
     },
     authorAttribution: {
       displayName: "Priya Sharma",
@@ -90,7 +90,7 @@ export async function getPlaceReviews(placeId: string): Promise<PlaceReviewsResu
       rating: 4.9,
       userRatingCount: 260,
       reviews: DEFAULT_FALLBACK_REVIEWS,
-      displayName: "Jazzrockers Performing Arts Academy",
+      displayName: "jazzrockers Performing Arts Academy",
     };
   }
 
@@ -111,7 +111,7 @@ export async function getPlaceReviews(placeId: string): Promise<PlaceReviewsResu
         rating: 4.9,
         userRatingCount: 260,
         reviews: DEFAULT_FALLBACK_REVIEWS,
-        displayName: "Jazzrockers Performing Arts Academy",
+        displayName: "jazzrockers Performing Arts Academy",
       };
     }
 
@@ -125,14 +125,14 @@ export async function getPlaceReviews(placeId: string): Promise<PlaceReviewsResu
       rating: data.rating ?? 4.9,
       userRatingCount: data.userRatingCount ?? 260,
       reviews: fetchedReviews,
-      displayName: data.displayName?.text || "Jazzrockers Performing Arts Academy",
+      displayName: data.displayName?.text || "jazzrockers Performing Arts Academy",
     };
   } catch (error) {
     return {
       rating: 4.9,
       userRatingCount: 260,
       reviews: DEFAULT_FALLBACK_REVIEWS,
-      displayName: "Jazzrockers Performing Arts Academy",
+      displayName: "jazzrockers Performing Arts Academy",
     };
   }
 }

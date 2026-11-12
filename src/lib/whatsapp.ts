@@ -7,7 +7,7 @@ export const JAZZROCKERS_WHATSAPP_NUMBER = "971800509";
 export const JAZZROCKERS_WHATSAPP_DISPLAY = "+971 800 509";
 
 export const DEFAULT_GENERAL_ENQUIRY_MESSAGE =
-  "Hello Jazzrockers! I would like to enquire about your dance, music, gymnastics, and fine arts classes for my child. Please share program schedules and trial class availability.";
+  "Hello jazzrockers! I would like to enquire about your dance, music, gymnastics, and fine arts classes for my child. Please share program schedules and trial class availability.";
 
 export interface WhatsAppBookingPayload {
   parentName: string;
@@ -70,7 +70,7 @@ export function openWhatsApp(phone = JAZZROCKERS_WHATSAPP_NUMBER, text = DEFAULT
  */
 export function formatTrialBookingMessage(data: WhatsAppBookingPayload): string {
   const lines: string[] = [
-    "🌟 *NEW FREE TRIAL BOOKING — Jazzrockers Academy* 🌟",
+    "🌟 *NEW FREE TRIAL BOOKING — jazzrockers Academy* 🌟",
     "",
     `👤 *Parent Name:* ${data.parentName.trim()}`,
     `📱 *Phone / WhatsApp:* ${data.phoneNumber.trim()}`,
@@ -94,7 +94,7 @@ export function formatTrialBookingMessage(data: WhatsAppBookingPayload): string 
   }
 
   lines.push("");
-  lines.push("Hello Jazzrockers Team, I have just submitted my free trial class registration on your website. Kindly confirm the available slots and next steps!");
+  lines.push("Hello jazzrockers Team, I have just submitted my free trial class registration on your website. Kindly confirm the available slots and next steps!");
 
   return lines.join("\n");
 }
@@ -104,13 +104,13 @@ export function formatTrialBookingMessage(data: WhatsAppBookingPayload): string 
  */
 export function formatBrochureLeadMessage(data: BrochureLeadPayload): string {
   const lines: string[] = [
-    "📄 *NEW PROGRAM BROCHURE DOWNLOAD — Jazzrockers Academy* 📄",
+    "📄 *NEW PROGRAM BROCHURE DOWNLOAD — jazzrockers Academy* 📄",
     "",
     `👤 *Name:* ${data.name.trim()}`,
     `🎂 *Student's Age:* ${data.age.trim()}`,
     `📱 *Phone / WhatsApp:* ${data.phoneNumber.trim()}`,
     "",
-    "Hello Jazzrockers Team, I have just downloaded your program brochure from the website. Kindly share additional details regarding course schedules, fee packages, and trial class slots!",
+    "Hello jazzrockers Team, I have just downloaded your program brochure from the website. Kindly share additional details regarding course schedules, fee packages, and trial class slots!",
   ];
 
   return lines.join("\n");

@@ -80,9 +80,9 @@ export const WhyChooseUs: React.FC = () => {
     <section className="pt-14 sm:pt-16 lg:pt-20 pb-4 sm:pb-6 relative overflow-hidden" id="why-choose-us">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
-          badge="Why Jazzrockers"
-          title="WHY PARENTS CHOOSE Jazzrockers"
-          highlightWord="Jazzrockers"
+          badge="Why jazzrockers"
+          title="WHY PARENTS CHOOSE jazzrockers"
+          highlightWord="jazzrockers"
           subtitle="Empowering the next generation with world-class performing arts instruction, confidence, and limitless imagination."
         />
 
@@ -158,7 +158,7 @@ export const WhyChooseUs: React.FC = () => {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                   </span>
-                  <span>Jazzrockers Course Guide</span>
+                  <span>jazzrockers Course Guide</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white leading-tight">
                  Explore Our Courses & Fee Guide
@@ -175,7 +175,7 @@ export const WhyChooseUs: React.FC = () => {
                 type="button"
                 onClick={openBrochureModal}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-brand-primary hover:bg-brand-primary-hover text-white font-bold text-sm sm:text-base shadow-primary hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-primary group cursor-pointer select-none"
-                aria-label="Download Jazzrockers Academy Brochure (PDF)"
+                aria-label="Download jazzrockers Academy Brochure (PDF)"
               >
                 <Download className="w-5 h-5 transition-transform duration-200 group-hover:translate-y-0.5 shrink-0" />
                 <span>Download Brochure</span>

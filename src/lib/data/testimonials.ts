@@ -4,7 +4,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
   {
     id: "1",
     quote:
-      "Jazzrockers has transformed my daughter. She is more confident and passionate about dance now!",
+      "jazzrockers has transformed my daughter. She is more confident and passionate about dance now!",
     author: "Priya Sharma",
     location: "Al Nahda, Dubai",
     rating: 5,

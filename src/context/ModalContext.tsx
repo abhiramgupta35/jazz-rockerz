@@ -30,7 +30,7 @@ interface ModalContextType {
 }
 
 const defaultWhatsAppData: WhatsAppModalOptions = {
-  title: "Chat with Jazzrockers on WhatsApp",
+  title: "Chat with jazzrockers on WhatsApp",
   subtitle: "Connect with our admissions & program advisory team directly on WhatsApp.",
   phone: JAZZROCKERS_WHATSAPP_NUMBER,
   displayPhone: JAZZROCKERS_WHATSAPP_DISPLAY,

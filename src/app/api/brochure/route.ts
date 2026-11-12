@@ -103,7 +103,7 @@ export async function POST(request: Request) {
     const clientEmail = process.env.CLIENT_EMAIL;
     const resendFromEmail =
       process.env.RESEND_FROM_EMAIL ||
-      "Jazzrockers Website <website@resend.dev>";
+      "jazzrockers Website <website@resend.dev>";
 
     if (
       resendApiKey &&
@@ -114,8 +114,8 @@ export async function POST(request: Request) {
       try {
         const resend = new Resend(resendApiKey);
 
-        const emailSubject = "New Brochure Download Enquiry — Jazzrockers";
-        const plainTextBody = `Jazzrockers Performing Arts Academy\nA new visitor has requested the program brochure.\n\nStudent Name: ${trimmedName}\nStudent Age: ${trimmedAge}\nPhone Number: ${trimmedPhone}\nSource: Get Your Program Brochure Modal`;
+        const emailSubject = "New Brochure Download Enquiry — jazzrockers";
+        const plainTextBody = `jazzrockers Performing Arts Academy\nA new visitor has requested the program brochure.\n\nStudent Name: ${trimmedName}\nStudent Age: ${trimmedAge}\nPhone Number: ${trimmedPhone}\nSource: Get Your Program Brochure Modal`;
 
         const htmlBody = `
 <!DOCTYPE html>
@@ -128,7 +128,7 @@ export async function POST(request: Request) {
   <div style="max-width: 580px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
     <div style="background-color: #1c2357; padding: 24px 32px; border-bottom: 4px solid #ef4444;">
       <h1 style="color: #ffffff; margin: 0; font-size: 20px; font-weight: 800; letter-spacing: -0.5px;">
-        Jazzrockers <span style="font-size: 14px; font-weight: 500; color: #cbd5e1; display: block; margin-top: 4px;">Performing Arts Academy</span>
+        jazzrockers <span style="font-size: 14px; font-weight: 500; color: #cbd5e1; display: block; margin-top: 4px;">Performing Arts Academy</span>
       </h1>
     </div>
     
@@ -161,7 +161,7 @@ export async function POST(request: Request) {
       </table>
 
       <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid #f1f5f9; font-size: 12px; color: #94a3b8; display: flex; justify-content: space-between;">
-        <span>Sent automatically via Jazzrockers Website</span>
+        <span>Sent automatically via jazzrockers Website</span>
         <span>${new Date().toLocaleString("en-US", { timeZone: "Asia/Dubai" })} UAE</span>
       </div>
     </div>

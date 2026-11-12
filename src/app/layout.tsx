@@ -26,11 +26,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jazzrockers.ae"),
-  title: "Jazzrockers | Dance, Music, Gymnastics & Fine Arts Academy in Dubai",
+  title: "jazzrockers | Dance, Music, Gymnastics & Fine Arts Academy in Dubai",
   description:
     "The UAE's Leading Academy for Dance, Music, Gymnastics & Fine Arts. 20+ professional programs for ages 2.5+. Book your FREE trial class across 5 Dubai studios today!",
   keywords: [
-    "JazzRockers Dubai",
+    "jazzrockers Dubai",
     "dance classes dubai",
     "music classes dubai",
     "gymnastics for kids dubai",
@@ -40,22 +40,22 @@ export const metadata: Metadata = {
     "piano lessons dubai",
     "free trial dance class dubai",
   ],
-  authors: [{ name: "Jazzrockers Academy" }],
+  authors: [{ name: "jazzrockers Academy" }],
   icons: {
     icon: "/images/jazz-logo.webp",
   },
   openGraph: {
-    title: "JazzRockers | Dance, Music, Gymnastics & Fine Arts Academy in Dubai",
+    title: "jazzrockers | Dance, Music, Gymnastics & Fine Arts Academy in Dubai",
     description:
-      "Discover your child's hidden talent with Jazzrockers. 20+ programs, certified coaches, and international performance opportunities in Dubai.",
+      "Discover your child's hidden talent with jazzrockers. 20+ programs, certified coaches, and international performance opportunities in Dubai.",
     url: "https://jazzrockers.ae",
-    siteName: "JazzRockers Academy",
+    siteName: "jazzrockers Academy",
     images: [
       {
         url: "/images/dance.webp",
         width: 1200,
         height: 630,
-        alt: "JazzRockers Performing Arts Academy",
+        alt: "jazzrockers Performing Arts Academy",
       },
     ],
     locale: "en_AE",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JazzRockers | Dance, Music, Gymnastics & Fine Arts Academy",
+    title: "jazzrockers | Dance, Music, Gymnastics & Fine Arts Academy",
     description:
       "20+ professional programs, certified coaches, and state-of-the-art studios across Dubai. Book a free trial today!",
     images: ["/images/dance.webp"],
