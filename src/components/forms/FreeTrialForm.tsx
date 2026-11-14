@@ -1,13 +1,20 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { User, Phone, Baby, ChevronDown, Check, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
-import { BRANCHES } from "@/lib/data/branches";
 import {
-  JAZZROCKERS_WHATSAPP_NUMBER,
-  formatTrialBookingMessage,
-  openWhatsApp,
-} from "@/lib/whatsapp";
+  User,
+  Phone,
+  Baby,
+  ChevronDown,
+  Check,
+  MapPin,
+  CheckCircle2,
+  ArrowRight,
+  Loader2,
+  AlertCircle,
+} from "lucide-react";
+import { BRANCHES } from "@/lib/data/branches";
+import { submitLead } from "@/lib/leadSubmission";
 import { trackEvent } from "@/lib/analytics";
 
 export const PROGRAM_OPTIONS = [
@@ -58,7 +65,9 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
     preferredBranch?: string;
   }>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [lastSubmittedMessage, setLastSubmittedMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [honeypot, setHoneypot] = useState("");
 
   // Close dropdown on click outside
   useEffect(() => {
@@ -116,26 +125,42 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validate()) {
+    if (isSubmitting || !validate()) {
       return;
     }
 
-    const branchObj = BRANCHES.find((b) => b.id === preferredBranch);
-    const branchName = branchObj ? branchObj.name : preferredBranch;
+    setIsSubmitting(true);
+    setSubmitError(null);
 
-    const formattedMessage = formatTrialBookingMessage({
-      parentName,
-      phoneNumber,
-      childAge,
-      interestedIn,
-      preferredBranch,
-      branchName,
+    const branchObj = BRANCHES.find((b) => b.id === preferredBranch);
+
+    const result = await submitLead({
+      formType: "Free Trial Booking",
+      name: parentName,
+      contact: phoneNumber,
+      course: interestedIn,
+      branch: branchObj ? branchObj.name : preferredBranch,
+      age: childAge,
+      honeypot,
     });
 
-    setLastSubmittedMessage(formattedMessage);
+    setIsSubmitting(false);
+
+    if (!result.ok) {
+      setSubmitError(result.error);
+      if (result.fieldErrors) {
+        setErrors((prev) => ({
+          ...prev,
+          parentName: result.fieldErrors?.name ?? prev.parentName,
+          phoneNumber: result.fieldErrors?.contact ?? prev.phoneNumber,
+        }));
+      }
+      return;
+    }
+
     setIsSubmitted(true);
 
     trackEvent("form_submission", {
@@ -144,19 +169,7 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
       branch: preferredBranch,
     });
 
-    // Redirect directly to WhatsApp with formatted details
-    openWhatsApp(JAZZROCKERS_WHATSAPP_NUMBER, formattedMessage);
-
-    if (onSuccess) {
-      onSuccess();
-    }
-  };
-
-  const handleReopenWhatsApp = () => {
-    if (lastSubmittedMessage) {
-      trackEvent("whatsapp_click", { location: "form_success_reopen" });
-      openWhatsApp(JAZZROCKERS_WHATSAPP_NUMBER, lastSubmittedMessage);
-    }
+    onSuccess?.();
   };
 
   return (
@@ -173,7 +186,7 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
 
       {/* Form Body or Success State */}
       {isSubmitted ? (
-        <div className="p-6 md:p-8 text-center space-y-4">
+        <div className="p-6 md:p-8 text-center space-y-4" role="status" aria-live="polite">
           <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
             <CheckCircle2 className="w-9 h-9" />
           </div>
@@ -183,24 +196,14 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
           </h4>
 
           <p className="text-sm text-gray-600 leading-relaxed">
-            Thank you, <span className="font-bold text-gray-900">{parentName}</span>! Your details have been captured and formatted for our WhatsApp admissions desk.
+            Thank you, <span className="font-bold text-gray-900">{parentName}</span>! Your details have been submitted successfully. Our team will contact you shortly.
           </p>
-
-          <div className="pt-2">
-            <button
-              type="button"
-              onClick={handleReopenWhatsApp}
-              className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 px-4 rounded-xl font-black text-sm tracking-wide shadow-lg shadow-green-600/20 active:scale-95 transition-all flex items-center justify-center gap-2"
-            >
-              <span>Send Details via WhatsApp</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
 
           <button
             type="button"
             onClick={() => {
               setIsSubmitted(false);
+              setSubmitError(null);
               setParentName("");
               setPhoneNumber("");
               setChildAge("");
@@ -389,14 +392,48 @@ export const FreeTrialForm: React.FC<FreeTrialFormProps> = ({
             )}
           </div>
 
+          {/* Honeypot spam trap — hidden from people and assistive tech */}
+          <div className="hidden" aria-hidden="true">
+            <label htmlFor="trial-website">Website</label>
+            <input
+              id="trial-website"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+            />
+          </div>
+
+          {submitError && (
+            <div
+              role="alert"
+              className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs leading-relaxed flex items-start gap-2"
+            >
+              <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+              <span>{submitError}</span>
+            </div>
+          )}
+
           {/* Submit Button */}
           <div className="pt-2">
             <button
               type="submit"
-              className="w-full bg-[#E31E24] hover:bg-[#C91A1F] active:scale-[0.98] text-white py-4 rounded-xl font-black text-[15px] tracking-wider uppercase transition-all shadow-lg shadow-red-500/25 flex items-center justify-center gap-2"
+              disabled={isSubmitting}
+              aria-busy={isSubmitting}
+              className="w-full bg-[#E31E24] hover:bg-[#C91A1F] active:scale-[0.98] text-white py-4 rounded-xl font-black text-[15px] tracking-wider uppercase transition-all shadow-lg shadow-red-500/25 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:active:scale-100"
             >
-              <span>BOOK FREE TRIAL</span>
-              <ArrowRight className="w-4 h-4" />
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span>SUBMITTING...</span>
+                </>
+              ) : (
+                <>
+                  <span>BOOK FREE TRIAL</span>
+                  <ArrowRight className="w-4 h-4" />
+                </>
+              )}
             </button>
           </div>
 

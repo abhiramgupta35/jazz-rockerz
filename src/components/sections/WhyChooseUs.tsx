@@ -83,6 +83,7 @@ export const WhyChooseUs: React.FC = () => {
           badge="Why jazzrockers"
           title="WHY PARENTS CHOOSE jazzrockers"
           highlightWord="jazzrockers"
+          showUnderline={false}
           subtitle="Empowering the next generation with world-class performing arts instruction, confidence, and limitless imagination."
         />
 

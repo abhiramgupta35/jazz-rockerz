@@ -42,6 +42,7 @@ export const GallerySection: React.FC = () => {
           badge="Moments of Magic"
           title="LIFE AT jazzrockers"
           highlightWord="jazzrockers"
+          showUnderline={false}
           subtitle="A glimpse into the energy, artistry, friendships, and triumphs that unfold in our Dubai studios."
         />
 

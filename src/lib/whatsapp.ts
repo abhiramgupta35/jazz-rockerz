@@ -9,22 +9,6 @@ export const JAZZROCKERS_WHATSAPP_DISPLAY = "+971 800 509";
 export const DEFAULT_GENERAL_ENQUIRY_MESSAGE =
   "Hello jazzrockers! I would like to enquire about your dance, music, gymnastics, and fine arts classes for my child. Please share program schedules and trial class availability.";
 
-export interface WhatsAppBookingPayload {
-  parentName: string;
-  phoneNumber: string;
-  childAge?: string;
-  interestedIn?: string;
-  preferredBranch?: string;
-  branchName?: string;
-  notes?: string;
-}
-
-export interface BrochureLeadPayload {
-  name: string;
-  age: string;
-  phoneNumber: string;
-}
-
 export interface WhatsAppModalOptions {
   title?: string;
   subtitle?: string;
@@ -63,55 +47,4 @@ export function openWhatsApp(phone = JAZZROCKERS_WHATSAPP_NUMBER, text = DEFAULT
   if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
     window.location.href = url;
   }
-}
-
-/**
- * Formats structured free trial form submission into a professional WhatsApp enquiry message
- */
-export function formatTrialBookingMessage(data: WhatsAppBookingPayload): string {
-  const lines: string[] = [
-    "🌟 *NEW FREE TRIAL BOOKING — jazzrockers Academy* 🌟",
-    "",
-    `👤 *Parent Name:* ${data.parentName.trim()}`,
-    `📱 *Phone / WhatsApp:* ${data.phoneNumber.trim()}`,
-  ];
-
-  if (data.childAge && data.childAge.trim()) {
-    lines.push(`🎂 *Child's Age:* ${data.childAge.trim()}`);
-  }
-
-  if (data.interestedIn && data.interestedIn.trim()) {
-    const programName = data.interestedIn.charAt(0).toUpperCase() + data.interestedIn.slice(1);
-    lines.push(`🎨 *Interested In:* ${programName}`);
-  }
-
-  if (data.branchName || data.preferredBranch) {
-    lines.push(`📍 *Preferred Branch:* ${data.branchName || data.preferredBranch}`);
-  }
-
-  if (data.notes && data.notes.trim()) {
-    lines.push(`📝 *Notes:* ${data.notes.trim()}`);
-  }
-
-  lines.push("");
-  lines.push("Hello jazzrockers Team, I have just submitted my free trial class registration on your website. Kindly confirm the available slots and next steps!");
-
-  return lines.join("\n");
-}
-
-/**
- * Formats brochure download lead into a professional WhatsApp enquiry message
- */
-export function formatBrochureLeadMessage(data: BrochureLeadPayload): string {
-  const lines: string[] = [
-    "📄 *NEW PROGRAM BROCHURE DOWNLOAD — jazzrockers Academy* 📄",
-    "",
-    `👤 *Name:* ${data.name.trim()}`,
-    `🎂 *Student's Age:* ${data.age.trim()}`,
-    `📱 *Phone / WhatsApp:* ${data.phoneNumber.trim()}`,
-    "",
-    "Hello jazzrockers Team, I have just downloaded your program brochure from the website. Kindly share additional details regarding course schedules, fee packages, and trial class slots!",
-  ];
-
-  return lines.join("\n");
 }

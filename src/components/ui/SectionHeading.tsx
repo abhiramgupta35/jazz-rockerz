@@ -10,6 +10,7 @@ interface SectionHeadingProps {
   subtitle?: string;
   centered?: boolean;
   light?: boolean;
+  showUnderline?: boolean;
   className?: string;
 }
 
@@ -20,6 +21,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   subtitle,
   centered = true,
   light = false,
+  showUnderline = true,
   className = "",
 }) => {
   // If a highlight word is provided, replace it with pink text
@@ -32,7 +34,13 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     return (
       <>
         {parts[0]}
-        <span className="text-brand-primary underline decoration-red-300 decoration-wavy decoration-2 underline-offset-8 normal-case">
+        <span
+          className={`text-brand-primary normal-case ${
+            showUnderline
+              ? "underline decoration-red-300 decoration-wavy decoration-2 underline-offset-8"
+              : ""
+          }`}
+        >
           {highlightWord}
         </span>
         {parts[1]}
